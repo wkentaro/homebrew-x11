@@ -3,6 +3,7 @@ require 'formula'
 class Pgplot < Formula
   homepage 'http://www.astro.caltech.edu/~tjp/pgplot/'
   url 'ftp://ftp.astro.caltech.edu/pub/pgplot/pgplot522.tar.gz'
+  mirror "ftp://ftp.us.horde.org/pub/linux/gentoo/distro/distfiles/pgplot522.tar.gz"
   version '5.2.2'
   sha1 '1f1c9aa17eeec9a2fb23fd15a0e4a91dcc49ddc1'
   bottle do
