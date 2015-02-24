@@ -46,8 +46,32 @@ class Scantailor < Formula
     sha1 "4594b28bcf9409ef252638830c633dd42c63bc40"
   end
 
+  # Hides Boost headers from Qt's moc tool.
+  # Result of perl -ni -e '$b=m/include.*boost/; print "#ifndef Q_MOC_RUN\n" if $b; print $_; print "#endif\n" if $b;' **/*.{h,cpp}
+  # https://bugreports.qt.io/browse/QTBUG-22829
+  stable do
+    patch do
+      url "https://gist.githubusercontent.com/jkseppan/ccf72d14f8b0efee6c7d/raw/dc97fbeb6b086a44c75b857a0f31e7a4f2adcdda/scantailor-0.9.11.1-moc-boost.patch"
+      sha1 "955227c27588db36e8198a9e55c536116c82044d"
+    end
+  end
+  devel do
+    patch do
+      url "https://gist.githubusercontent.com/jkseppan/836934647cca55eba855/raw/eff85dafc5a0fdc62859f106ffffac28eba38d93/scantailor-enhanced-20140214-moc-boost.patch"
+      sha1 "4d143ca7ba2018ef9ee683d1c2da09b3658b5c26"
+    end
+  end
+
+  # Changes some uses of boost::lambda::bind to C++11 lambdas.
+  # Avoids compilation errors with Boost 1.57.
+  # https://github.com/scantailor/scantailor/issues/125
+  patch do
+    url "https://gist.githubusercontent.com/jkseppan/49901ece3da6a0604887/raw/32a273bec2d20c2c70e8b789616f93590af6a4b1/scantailor-enhanced-20140214-c++11.patch"
+    sha1 "3a4373f006de5640087182d7bb4f0e1cb9cc2c56"
+  end
+
   def install
-    system "cmake", ".", "-DPNG_INCLUDE_DIR=#{MacOS::X11.include}", *std_cmake_args
+    system "cmake", ".", "-DPNG_INCLUDE_DIR=#{MacOS::X11.include}", "-DCMAKE_CXX_FLAGS=-std=c++11 -stdlib=libc++", *std_cmake_args
     system "make install"
   end
 end
