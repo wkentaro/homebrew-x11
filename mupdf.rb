@@ -1,8 +1,7 @@
 class Mupdf < Formula
   homepage "http://mupdf.com"
-  url "http://mupdf.com/downloads/mupdf-1.6-source.tar.gz"
-  sha256 "9813ee330950a641364181649ebd369c947adbcea9d41ed953ec5365640ea563"
-  revision 1
+  url "http://mupdf.com/downloads/mupdf-1.7a-source.tar.gz"
+  sha256 "8c035ffa011fc44f8a488f70da3e6e51889508bbf66fe6b90a63e0cfa6c17d1c"
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
@@ -29,6 +28,6 @@ class Mupdf < Formula
 
   test do
     pdf = test_fixtures("test.pdf")
-    assert_match /Homebrew test/, shell_output("#{bin}/mudraw -t #{pdf} 2>/dev/null")
+    assert_match /Homebrew test/, shell_output("#{bin}/mudraw -F txt #{pdf}")
   end
 end
