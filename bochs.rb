@@ -1,19 +1,13 @@
-require 'formula'
-
 class Bochs < Formula
-  homepage 'http://bochs.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/bochs/bochs/2.6.2/bochs-2.6.2.tar.gz'
-  sha1 'f82ee01a52367d2a6daffa2774a1297b978f6821'
+  homepage "http://bochs.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/bochs/bochs/2.6.7/bochs-2.6.7.tar.gz"
+  sha256 "a4354eeb699662da869b038e225160ec726b883f1b4f425a06cf56cbffbb8282"
 
-  depends_on 'pkg-config' => :build
+  depends_on "pkg-config" => :build
   depends_on :x11
-  depends_on 'gtk+'
+  depends_on "gtk+"
 
   def install
-    # upstream Makefile bug
-    # https://github.com/Homebrew/homebrew/pull/32832#issuecomment-57586763
-    inreplace "configure", 'if test "$have_ltdl" = 1', 'if 0'
-
     system "./configure", "--prefix=#{prefix}",
                           "--with-x11",
                           "--enable-debugger",
@@ -43,10 +37,10 @@ class Bochs < Formula
                           "--enable-ne2000"
 
     system "make"
-    system "make install"
+    system "make", "install"
   end
 
   test do
-    system "#{bin}/bochs"
+    system bin/"bochs", "--help"
   end
 end
