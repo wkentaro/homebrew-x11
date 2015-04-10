@@ -1,8 +1,8 @@
 class Inkscape < Formula
-  homepage 'http://inkscape.org/'
-  url 'https://downloads.sourceforge.net/project/inkscape/inkscape/0.48.5/inkscape-0.48.5.tar.gz'
-  sha1 'e14789da0f6b5b84ef26f6759e295bc4be7bd34d'
-  revision 1
+  homepage "https://inkscape.org/"
+  url "https://inkscape.org/en/gallery/item/3854/inkscape-0.91.tar.gz"
+  mirror "https://mirrors.kernel.org/debian/pool/main/i/inkscape/inkscape_0.91.orig.tar.gz"
+  sha256 "2ca3cfbc8db53e4a4f20650bf50c7ce692a88dcbf41ebc0c92cd24e46500db20"
 
   bottle do
     sha1 "5d5fa915ff5cb8a245c7e8e2295cda07149c311d" => :yosemite
@@ -10,83 +10,58 @@ class Inkscape < Formula
     sha1 "63052a052b408edf1755ff78cc00fdb6ffc058b2" => :mountain_lion
   end
 
-  stable do
-    # boost 1.56 compatibility
-    # https://bugs.launchpad.net/inkscape/+bug/1357411
-    patch :p0, :DATA
+  head do
+    url "lp:inkscape", :using => :bzr
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
 
-    # poppler 0.29 compatibility
-    # https://bugs.launchpad.net/inkscape/+bug/1399811
-    patch :p0 do
-      url "https://launchpadlibrarian.net/192286866/1399811-fix-build-with-poppler-0.29.0-048x-v1.diff"
-      sha1 "82ad02357a2405c11f29f2e516b1a7f55953e807"
+  depends_on "boost-build" => :build
+  depends_on "intltool" => :build
+  depends_on "pkg-config" => :build
+  depends_on "poppler" => :optional
+  depends_on "bdw-gc"
+  depends_on "boost"
+  depends_on "cairomm"
+  depends_on "gettext"
+  depends_on "glibmm"
+  depends_on "gsl"
+  depends_on "gtkmm"
+  depends_on "hicolor-icon-theme"
+  depends_on "little-cms"
+  depends_on "pango"
+  depends_on "popt"
+  depends_on :x11
+
+  if MacOS.version < :mavericks
+    fails_with :clang do
+      cause "inkscape's dependencies will be built with libstdc++ and fail to link."
     end
   end
 
-  head do
-    url 'lp:inkscape/0.48.x', :using => :bzr
-  end
-
-  # needed on stable for poppler patch
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-
-  depends_on 'pkg-config' => :build
-  depends_on 'intltool' => :build
-  depends_on 'boost-build' => :build
-  depends_on 'gettext'
-  depends_on 'bdw-gc'
-  depends_on 'glibmm'
-  depends_on 'gtkmm'
-  depends_on 'gsl'
-  depends_on 'boost'
-  depends_on 'popt'
-  depends_on 'little-cms'
-  depends_on 'cairomm'
-  depends_on 'pango'
-  depends_on :x11
-  depends_on 'poppler' => :optional
-  depends_on 'hicolor-icon-theme'
-
-  needs :cxx11
-
-  fails_with :clang do
-    cause "inkscape's dependencies will be built with libstdc++ and fail to link."
-  end if MacOS.version < :mavericks
+  needs :cxx11 if MacOS.version >= :mavericks
 
   def install
-    ENV.cxx11
+    ENV.cxx11 if MacOS.version >= :mavericks
+    ENV.append "LDFLAGS", "-liconv"
 
-    if build.head?
-      system "./autogen.sh"
-    elsif build.with? "poppler"
-      system "autoconf"
-      system "autoheader"
-    end
-
-    args = [ "--disable-dependency-tracking",
-             "--prefix=#{prefix}",
-             "--enable-lcms" ]
+    args = %W[
+      --prefix=#{prefix}
+      --disable-dependency-tracking
+      --disable-silent-rules
+      --disable-strict-build
+      --enable-lcms
+      --without-gnome-vfs
+    ]
     args << "--disable-poppler-cairo" if build.without? "poppler"
-    system "./configure", *args
 
+    system "./autogen.sh" if build.head?
+    system "./configure", *args
     system "make", "install"
   end
 
   test do
-    system "#{bin}/inkscape", "-V"
+    system "#{bin}/inkscape", "-x"
   end
 end
-__END__
-=== modified file 'src/object-snapper.cpp'
---- src/object-snapper.cpp	2010-07-19 06:51:04 +0000
-+++ src/object-snapper.cpp	2014-08-15 15:43:28 +0000
-@@ -561,7 +561,7 @@
-                         // When it's within snapping range, then return it
-                         // (within snapping range == between p_min_on_cl and p_max_on_cl == 0 < ta < 1)
-                         Geom::Coord dist = Geom::L2(_snapmanager->getDesktop()->dt2doc(p_proj_on_cl) - p_inters);
--                        SnappedPoint s(_snapmanager->getDesktop()->doc2dt(p_inters), p.getSourceType(), p.getSourceNum(), k->target_type, dist, getSnapperTolerance(), getSnapperAlwaysSnap(), true, k->target_bbox);
-+                        SnappedPoint s(_snapmanager->getDesktop()->doc2dt(p_inters), p.getSourceType(), p.getSourceNum(), k->target_type, dist, getSnapperTolerance(), getSnapperAlwaysSnap(), true, false, k->target_bbox);
-                         sc.points.push_back(s);
-                     }
-                 }
