@@ -1,10 +1,15 @@
-require 'formula'
-
 class Hexchat < Formula
-  homepage 'http://hexchat.github.io/'
-  head 'https://github.com/hexchat/hexchat.git'
-  url 'http://dl.hexchat.net/hexchat/hexchat-2.10.1.tar.xz'
-  sha1 '3ad562ec76323ba9d0f279d36201a333594c755b'
+  homepage "https://hexchat.github.io/"
+  url "https://dl.hexchat.net/hexchat/hexchat-2.10.2.tar.xz"
+  mirror "https://mirrors.kernel.org/debian/pool/main/h/hexchat/hexchat_2.10.2.orig.tar.xz"
+  sha256 "87ebf365c576656fa3f23f51d319b3a6d279e4a932f2f8961d891dd5a5e1b52c"
+
+  head do
+    url "https://github.com/hexchat/hexchat.git"
+    depends_on "automake" => :build
+    depends_on "autoconf" => :build
+    depends_on "libtool" => :build
+  end
 
   bottle do
     sha1 "da41ccf19d762513a1e774c078a2f7bf9e46073c" => :mavericks
@@ -12,16 +17,17 @@ class Hexchat < Formula
     sha1 "728caab194af26da2f6eec798fb162dffa817698" => :lion
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'intltool' => :build
+  depends_on "pkg-config" => :build
+  depends_on "intltool" => :build
   depends_on :python => :optional
   depends_on :python3 => :optional
-  depends_on 'gettext'
-  depends_on 'gtk+'
+  depends_on "gettext"
+  depends_on "gtk+"
+  depends_on "openssl"
   depends_on :x11
 
-  option 'without-perl', 'Build without Perl support'
-  option 'without-plugins', 'Build without plugin support'
+  option "without-perl", "Build without Perl support"
+  option "without-plugins", "Build without plugin support"
 
   def install
     args = %W[--prefix=#{prefix}
@@ -43,10 +49,18 @@ class Hexchat < Formula
     args << "--disable-perl" if build.without? "perl"
     args << "--disable-plugin" if build.without? "plugins"
 
-    system "./configure", *args
+    if build.head?
+      system "./autogen.sh", *args
+    else
+      system "./configure", *args
+    end
     system "make", "install"
 
     rm_rf share/"applications"
     rm_rf share/"appdata"
+  end
+
+  test do
+    system bin/"hexchat", "--help-gtk"
   end
 end
