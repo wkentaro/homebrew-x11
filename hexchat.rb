@@ -12,9 +12,10 @@ class Hexchat < Formula
   end
 
   bottle do
-    sha1 "da41ccf19d762513a1e774c078a2f7bf9e46073c" => :mavericks
-    sha1 "f10e3860adee826c03e6269991a5e77d884be028" => :mountain_lion
-    sha1 "728caab194af26da2f6eec798fb162dffa817698" => :lion
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "2e75e880ebded6a712c2abb62f935e92caaee6df9d3bb6288346e24e5d888109" => :yosemite
+    sha256 "e55359c1d279801d086d3b91b2498d5a7e50484653691ff50dcc091f3b4b6efc" => :mavericks
+    sha256 "333a2ab3f11551c00dff3ba2f583bbf8e8877128adad62ddebf6ffad771f8944" => :mountain_lion
   end
 
   depends_on "pkg-config" => :build
