@@ -10,7 +10,7 @@ class Gnumeric < Formula
     sha256 "d4e2a984bc16c17e6d41bcb1992d16c9fb097bcac40b5ed3a053cf4b7eb4d334" => :mountain_lion
   end
 
-  option "python-scripting", "Enable Python scripting."
+  option "with-python-scripting", "Enable Python scripting."
 
   depends_on "pkg-config" => :build
   depends_on "intltool" => :build
@@ -18,14 +18,21 @@ class Gnumeric < Formula
   depends_on "goffice"
   depends_on "pygobject" if build.include? "python-scripting"
   depends_on "rarian"
-  depends_on :x11
+
+  deprecated_option "python-scripting" => "with-python-scripting"
 
   def install
     system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
-    system "make install"
+                          "--prefix=#{prefix}",
+                          "--disable-schemas-compile"
+    system "make", "install"
+  end
 
-    # gnumeric installs this file that conflicts with other GTK packages
-    (share/"glib-2.0/schemas/gschemas.compiled").unlink
+  def post_install
+    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+  end
+
+  test do
+    system "#{bin}/gnumeric", "--version"
   end
 end
