@@ -1,18 +1,19 @@
-require "formula"
-
 class RxvtUnicode < Formula
   homepage "http://software.schmorp.de/pkg/rxvt-unicode.html"
-  url "http://dist.schmorp.de/rxvt-unicode/Attic/rxvt-unicode-9.20.tar.bz2"
-  sha1 "6214c7893a8c968936103e255a1d3d1e9868abf9"
+  url "http://dist.schmorp.de/rxvt-unicode/rxvt-unicode-9.21.tar.bz2"
+  mirror "https://mirrors.kernel.org/debian/pool/main/r/rxvt-unicode/rxvt-unicode_9.21.orig.tar.bz2"
+  sha256 "75270ed72bc5895a64a1d7392bf45a622204192371c3965bd3dd978dc088956b"
 
-  option "disable-iso14755", "Disable ISO 14775 Shift+Ctrl hotkey"
+  option "without-iso14755", "Disable ISO 14775 Shift+Ctrl hotkey"
+
+  deprecated_option "disable-iso14755" => "without-iso14755"
 
   depends_on "pkg-config" => :build
   depends_on :x11
 
   # Patches 1 and 2 remove -arch flags for compiling perl support
-  # Patch 3 removes an extra 10% font width that urxvt adds.
-  #   http://aur.archlinux.org/packages.php?ID=44649
+  # Patch 3 removes an extra 10% font width that urxvt adds:
+  # https://web.archive.org/web/20111120115603/http://aur.archlinux.org/packages.php?ID=44649
   # Patch 4 fixes `make install` target on case-insensitive filesystems
   patch :DATA
 
@@ -31,10 +32,19 @@ class RxvtUnicode < Formula
     ]
 
     args << "--disable-perl" if ENV.compiler == :clang
-    args << "--disable-iso14755" if build.include? "disable-iso14755"
+    args << "--disable-iso14755" if build.without? "iso14755"
 
     system "./configure", *args
     system "make", "install"
+  end
+
+  test do
+    daemon = fork do
+      system bin/"urxvtd"
+    end
+    sleep 2
+    system bin/"urxvtc", "-k"
+    Process.wait daemon
   end
 end
 
