@@ -1,10 +1,8 @@
-require "formula"
-
 class Rdesktop < Formula
   homepage "http://www.rdesktop.org/"
-  url "https://downloads.sourceforge.net/project/rdesktop/rdesktop/1.8.2/rdesktop-1.8.2.tar.gz"
-  sha1 "089e8f2b18688ded8afc659de5ba8d5b14c7b874"
-  revision 1
+  url "https://downloads.sourceforge.net/project/rdesktop/rdesktop/1.8.3/rdesktop-1.8.3.tar.gz"
+  mirror "https://mirrors.kernel.org/debian/pool/main/r/rdesktop/rdesktop_1.8.3.orig.tar.gz"
+  sha256 "88b20156b34eff5f1b453f7c724e0a3ff9370a599e69c01dc2bf0b5e650eece4"
 
   bottle do
     revision 1
@@ -16,6 +14,11 @@ class Rdesktop < Formula
   depends_on "openssl"
   depends_on :x11
 
+  # Note: The patch below is meant to remove the reference to the
+  # undefined symbol SCARD_CTL_CODE. Since we are compiling with
+  # --disable-smartcard, we don't need it anyway (and it should
+  # probably have been #ifdefed in the original code).
+  # upstream bug report: https://sourceforge.net/p/rdesktop/bugs/352/
   patch :DATA
 
   def install
@@ -28,11 +31,11 @@ class Rdesktop < Formula
     system "./configure", *args
     system "make", "install"
   end
-end
 
-# Note: The patch below is meant to remove the reference to the undefined symbol
-# SCARD_CTL_CODE. Since we are compiling with --disable-smartcard, we don't need
-# it anyway (and it should probably have been #ifdefed in the original code).
+  test do
+    assert_match version.to_s, shell_output("#{bin}/rdesktop -help 2>&1", 64)
+  end
+end
 
 __END__
 diff --git a/scard.c b/scard.c
