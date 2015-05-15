@@ -1,9 +1,7 @@
-require "formula"
-
 class Gnumeric < Formula
-  homepage "http://projects.gnome.org/gnumeric/"
-  url "http://ftp.gnome.org/pub/GNOME/sources/gnumeric/1.10/gnumeric-1.10.17.tar.bz2"
-  sha256 "bb2a13424811d132fe1be7a6e82d61157a18c630fc91b7409503dbd7ef600ea5"
+  homepage "https://projects.gnome.org/gnumeric/"
+  url "http://ftp.gnome.org/pub/GNOME/sources/gnumeric/1.12/gnumeric-1.12.22.tar.xz"
+  sha256 "3908cfd6520b599eefefe222aadeaa5126394b54d9a9a7f5e0f938eb674dcf47"
 
   option "python-scripting", "Enable Python scripting."
 
@@ -19,5 +17,8 @@ class Gnumeric < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make install"
+
+    # gnumeric installs this file that conflicts with other GTK packages
+    (share/"glib-2.0/schemas/gschemas.compiled").unlink
   end
 end
