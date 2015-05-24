@@ -55,6 +55,13 @@ class Scantailor < Formula
       sha1 "955227c27588db36e8198a9e55c536116c82044d"
     end
   end
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "d0ddcdd1b83acd05c3021ca4a8bb0f05a577a62956ea5c71e5d00ed5cb8786e6" => :yosemite
+    sha256 "87c57b5c683081c9feccbbd7dba3988155cbeeb72312577fd919f39fadabf486" => :mavericks
+    sha256 "556a56a3d441822ca4b3442991f4e6c805e7d0cb5cf35c42ceae664b760ee53d" => :mountain_lion
+  end
+
   devel do
     patch do
       url "https://gist.githubusercontent.com/jkseppan/836934647cca55eba855/raw/eff85dafc5a0fdc62859f106ffffac28eba38d93/scantailor-enhanced-20140214-moc-boost.patch"
