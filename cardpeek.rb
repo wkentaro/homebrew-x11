@@ -5,10 +5,11 @@ class Cardpeek < Formula
   sha256 "9c78dfdf84493c551b49447e4bb46c8d7b33f0785b93893222b70b6115013a85"
 
   bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
     cellar :any
-    sha1 "71775a85560719e72a31284f1852b236daebab7c" => :mavericks
-    sha1 "8801e8e235850927169195d1beac9a44566ba33c" => :mountain_lion
-    sha1 "d6522d6a501745e2a3ef0744a06e78a6690f81be" => :lion
+    sha256 "e74308982f81ae050d341c8fd93473124570289d9ba7f0d4392b0b22eeddad94" => :yosemite
+    sha256 "2901819124ad9f0d2ed67bf6eace436f02d3c6b590790aac3cbfe78db94602f4" => :mavericks
+    sha256 "6c97f5322f10e240c7b27efdc7d13e289c6f147e3a4a88db301cc32eec94ebce" => :mountain_lion
   end
 
   head "https://cardpeek.googlecode.com/svn/trunk/"
