@@ -5,9 +5,10 @@ class Inkscape < Formula
   sha256 "2ca3cfbc8db53e4a4f20650bf50c7ce692a88dcbf41ebc0c92cd24e46500db20"
 
   bottle do
-    sha1 "5d5fa915ff5cb8a245c7e8e2295cda07149c311d" => :yosemite
-    sha1 "6687b6ee83263d4c64e06a8e4432d3be77d95be9" => :mavericks
-    sha1 "63052a052b408edf1755ff78cc00fdb6ffc058b2" => :mountain_lion
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "6070cb1b770158857f6cd3ba82991b157c9fe2b1a107e3ef5e85c20e9216fa66" => :yosemite
+    sha256 "b8292bdb0a9766ee5ae12342480b8d398994ecb61ca6e569f0484286eb496169" => :mavericks
+    sha256 "5c71a91d351dae95332dd5ff73e0a033040cc1c1b6670537b0d875a997bd46b2" => :mountain_lion
   end
 
   head do
