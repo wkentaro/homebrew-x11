@@ -8,9 +8,11 @@ class Pgplot < Formula
   revision 1
 
   bottle do
-    sha1 "01f6c78460a693cdf4f12fe3d07160924ea728d2" => :yosemite
-    sha1 "d453d38628035bef7c793c433a92a6f22c6ce77f" => :mavericks
-    sha1 "cefc1cac43d17dc86f6424a75bfec3a5dd63b3d9" => :mountain_lion
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    revision 1
+    sha256 "edee06a049593b59c674b7a509ab797958950813d9d5809d8fde49c02bcf024e" => :yosemite
+    sha256 "23fa9dbad25ab32e27001f0da418023240511d5192f5712615505ae4705d410c" => :mavericks
+    sha256 "1006d1d20be0805e193eb7cffa27ae93efa3feefae8813f0baac2a340e159e66" => :mountain_lion
   end
 
   option "with-button", "Install libbutton"
