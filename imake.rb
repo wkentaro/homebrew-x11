@@ -3,6 +3,13 @@ class Imake < Formula
   url "http://xorg.freedesktop.org/releases/individual/util/imake-1.0.7.tar.bz2"
   sha1 "52e236776133f217d438622034b8603d201a6ec5"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "c87f83a1a19a9b75ad66550b728b6d079ee40c422af1fb1c63814d574c35379a" => :yosemite
+    sha256 "e623f7ff86eb5a0d1231b7cfde05739ae049ea3e0faf84741bb4f003a2bc028a" => :mavericks
+    sha256 "e52e0277c21eb66f1bb70f65a4c30e2f4a8b85567d14dd75e549c9c6af8b7472" => :mountain_lion
+  end
+
   depends_on "pkg-config" => :build
   depends_on "gcc"
   depends_on :x11
