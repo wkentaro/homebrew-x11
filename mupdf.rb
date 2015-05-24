@@ -6,9 +6,9 @@ class Mupdf < Formula
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
     cellar :any
-    sha256 "a6afbf12678464fcfe083bf8d4e63f30ae25cf0e6ffbe302f6f55ba416a237ce" => :yosemite
-    sha256 "3880793f6a4855135640e57f7328770344c47c3ea5d582f6075034a4063598bf" => :mavericks
-    sha256 "f1217ab12adf316067f7e85b5a82dc1790ca0fdaab7dc0be9073412da6059ace" => :mountain_lion
+    sha256 "cd08e744981da8217edff2417534197b6fc1123057044672af4ad45454c18995" => :yosemite
+    sha256 "8d4a45552059a14df044e32152d8907d3b0e95f0445a9d10bfe0d876e4d00ca4" => :mavericks
+    sha256 "4692fc5f8ba4a47b7d9efee0b2e1251b0a3538eb0dcebbf5e2e0392a8da28a94" => :mountain_lion
   end
 
   depends_on :macos => :snow_leopard
