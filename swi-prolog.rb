@@ -6,11 +6,10 @@ class SwiProlog < Formula
   sha256 "801423b8293d08b96b575ffa96d91cce3acf2473f04c23d58657dd668287f8cb"
 
   bottle do
-    root_url "https://downloads.sf.net/project/machomebrew/Bottles/x11"
-    revision 1
-    sha1 "77484655836158b8a98d0c643ca016c9d5a32f33" => :yosemite
-    sha1 "ac3ff712449af7fbe1a391d801caa71d0849ccc3" => :mavericks
-    sha1 "18e03b72f6d4ac40a4820ea69c102c03d8c3cdbc" => :mountain_lion
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "449b42660e1b302fb8822288fd7a3882cc6f94b33d329cce66cf84255e99a0a4" => :yosemite
+    sha256 "a664d7d4790161fa11aa6de62a463dbad1b7b140507da2ebdfef531437190fcf" => :mavericks
+    sha256 "331b630a848d66c9bc4687d5e9c23ff877b5f4e077f2097afd05095eabba8c98" => :mountain_lion
   end
 
   devel do
