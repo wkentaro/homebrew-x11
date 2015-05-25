@@ -4,6 +4,13 @@ class RxvtUnicode < Formula
   mirror "https://mirrors.kernel.org/debian/pool/main/r/rxvt-unicode/rxvt-unicode_9.21.orig.tar.bz2"
   sha256 "75270ed72bc5895a64a1d7392bf45a622204192371c3965bd3dd978dc088956b"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "be8b99848a935c3c9e6b34cfb25fa1addd59785e00293dc65b9cbb0d03b50acd" => :yosemite
+    sha256 "fc878a8aa5e8df507ae86fb8faf0f8a8c4dff4f94397280b2d9371822cb1f217" => :mavericks
+    sha256 "3763b2807f304a53ab922874d9627adc41c6b4427f9f04787fe1825f28ce4430" => :mountain_lion
+  end
+
   option "without-iso14755", "Disable ISO 14775 Shift+Ctrl hotkey"
 
   deprecated_option "disable-iso14755" => "without-iso14755"
