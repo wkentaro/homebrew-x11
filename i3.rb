@@ -1,9 +1,9 @@
-require "formula"
-
 class I3 < Formula
+  desc "Tiling window manager"
   homepage "http://i3wm.org/"
-  url "http://i3wm.org/downloads/i3-4.8.tar.bz2"
-  sha1 "857d8d0014b873de406e2041dea94d81cc515b74"
+  url "http://i3wm.org/downloads/i3-4.10.2.tar.bz2"
+  sha256 "0795a31b47f93b637da7f7e65197568117f46a35c745f4de4f56e7b2efcccfd8"
+  head "https://github.com/i3/i3.git"
 
   depends_on "asciidoc" => :build
   depends_on "pkg-config" => :build
@@ -15,6 +15,7 @@ class I3 < Formula
   depends_on "startup-notification"
   depends_on "yajl"
   depends_on :x11
+  depends_on "libxkbcommon"
 
   def install
     # In src/i3.mk, precompiled headers are used if CC=clang, however superenv
