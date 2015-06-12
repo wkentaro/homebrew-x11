@@ -1,11 +1,9 @@
-require "formula"
-
 class Eiffelstudio < Formula
+  desc "A development environment for the Eiffel language"
   homepage "https://www.eiffel.com"
-  url "https://ftp.eiffel.com/pub/download/14.05/eiffelstudio-14.05.tar"
-  sha1 "e0b9d0c4c10f6191e4b0b2ccbb6efc9345c2f950"
+  url "https://ftp.eiffel.com/pub/download/15.01/eiffelstudio-15.01.tar"
+  sha256 "3d2984bac35326e3860ee88dd7bba877b7a47e3d07b3cd6946b51a152577642c"
 
-  depends_on :x11
   depends_on "pkg-config" => :build
   depends_on "gtk+"
 
@@ -22,9 +20,9 @@ class Eiffelstudio < Formula
   def install
     system "./compile_exes", ise_platform
     system "./make_images", ise_platform
-    prefix.install Dir["Eiffel_14.05/*"]
+    prefix.install Dir["Eiffel_15.01/*"]
     bin.mkpath
-    env = { :ISE_EIFFEL => prefix, :ISE_PLATFORM => ise_platform , :PKG_CONFIG_PATH => "/opt/X11/lib/pkgconfig" }
+    env = { :ISE_EIFFEL => prefix, :ISE_PLATFORM => ise_platform }
     (bin + "ec").write_env_script(prefix+"studio/spec/#{ise_platform}/bin/ec", env)
     (bin + "ecb").write_env_script(prefix+"studio/spec/#{ise_platform}/bin/ecb", env)
     (bin + "estudio").write_env_script(prefix+"studio/spec/#{ise_platform}/bin/estudio", env)
