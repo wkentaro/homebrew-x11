@@ -1,15 +1,10 @@
 class Hexchat < Formula
+  desc "An IRC client based on XChat"
   homepage "https://hexchat.github.io/"
   url "https://dl.hexchat.net/hexchat/hexchat-2.10.2.tar.xz"
   mirror "https://mirrors.kernel.org/debian/pool/main/h/hexchat/hexchat_2.10.2.orig.tar.xz"
   sha256 "87ebf365c576656fa3f23f51d319b3a6d279e4a932f2f8961d891dd5a5e1b52c"
-
-  head do
-    url "https://github.com/hexchat/hexchat.git"
-    depends_on "automake" => :build
-    depends_on "autoconf" => :build
-    depends_on "libtool" => :build
-  end
+  revision 1
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
@@ -18,17 +13,24 @@ class Hexchat < Formula
     sha256 "333a2ab3f11551c00dff3ba2f583bbf8e8877128adad62ddebf6ffad771f8944" => :mountain_lion
   end
 
+  head do
+    url "https://github.com/hexchat/hexchat.git"
+    depends_on "automake" => :build
+    depends_on "autoconf" => :build
+    depends_on "libtool" => :build
+  end
+
+  option "without-perl", "Build without Perl support"
+  option "without-plugins", "Build without plugin support"
+
   depends_on "pkg-config" => :build
   depends_on "intltool" => :build
   depends_on :python => :optional
   depends_on :python3 => :optional
   depends_on "gettext"
   depends_on "gtk+"
+  depends_on "gtk-mac-integration"
   depends_on "openssl"
-  depends_on :x11
-
-  option "without-perl", "Build without Perl support"
-  option "without-plugins", "Build without plugin support"
 
   def install
     args = %W[--prefix=#{prefix}
