@@ -1,7 +1,8 @@
 class Bochs < Formula
   homepage "http://bochs.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/bochs/bochs/2.6.7/bochs-2.6.7.tar.gz"
-  sha256 "a4354eeb699662da869b038e225160ec726b883f1b4f425a06cf56cbffbb8282"
+  desc "A highly portable open source IA-32 (x86) PC emulator written in C++"
+  url "https://downloads.sourceforge.net/project/bochs/bochs/2.6.8/bochs-2.6.8.tar.gz"
+  sha256 "79700ef0914a0973f62d9908ff700ef7def62d4a28ed5de418ef61f3576585ce"
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
