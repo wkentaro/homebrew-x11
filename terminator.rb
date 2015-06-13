@@ -1,14 +1,12 @@
-require "formula"
-
 class Terminator < Formula
-  homepage "https://launchpad.net/terminator"
+  desc "Multiple terminals in one window"
+  homepage "http://gnometerminator.blogspot.co.uk/p/introduction.html"
   url "http://launchpad.net/terminator/trunk/0.97/+download/terminator-0.97.tar.gz"
-  sha1 "aa92a6cacd572f6a834ac1de88ae699c7b7dee69"
+  sha256 "9131847023fa22f11cf812f6ceff51b5d66d140b6518ad41d7fa8b0742bfd3f7"
 
   depends_on "pkg-config" => :build
   depends_on "intltool" => :build
   depends_on :python
-  depends_on :x11
   depends_on "vte"
   depends_on "pygtk"
   depends_on "pygobject"
@@ -23,6 +21,10 @@ class Terminator < Formula
     ENV.prepend_create_path "PYTHONPATH", HOMEBREW_PREFIX+"lib/python2.7/site-packages"
     system "python", "setup.py", "install", "--prefix=#{prefix}"
     bin.env_script_all_files(libexec+"bin", :PYTHONPATH => ENV["PYTHONPATH"])
+  end
+
+  test do
+    system "#{bin}/terminator", "--version"
   end
 end
 
