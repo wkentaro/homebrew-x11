@@ -2,10 +2,10 @@ require "language/haskell"
 
 class Threadscope < Formula
   include Language::Haskell::Cabal
-
+  desc "A tool for performance profiling of parallel Haskell programs"
   homepage "https://wiki.haskell.org/ThreadScope"
-  url "https://hackage.haskell.org/package/threadscope-0.2.6/threadscope-0.2.6.tar.gz"
-  sha256 "ca3b3a8f57315f47f7f6787e5d92ca26c216fb67562192ae37a8cb37dceecc5f"
+  url "https://hackage.haskell.org/package/threadscope-0.2.7/threadscope-0.2.7.tar.gz"
+  sha256 "cc5653831252d55b3ba7506ea648e770b2c4489cdf4d78828f07dc24ea7ffdb6"
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
@@ -14,7 +14,6 @@ class Threadscope < Formula
     sha256 "75e986926847ba806c046265316b518c8b8f7f14c726df60c7ede053fe82bf3f" => :mountain_lion
   end
 
-  depends_on :x11
   depends_on "cabal-install" => :build
   depends_on "pkg-config" => :build
   depends_on "cairo"
@@ -33,7 +32,8 @@ class Threadscope < Formula
       cabal_install "--only-dependencies", "ghc-events"
       cabal_install "--prefix=#{prefix}", "ghc-events"
       cabal_install_tools "gtk2hs-buildtools"
-      cabal_install "glib", "gio", "cairo", "pango", "gtk"
+      cabal_install "glib", "gio", "cairo", "pango"
+      cabal_install "-fhave-quartz-gtk", "gtk"
       cabal_install "--only-dependencies"
       cabal_install "--prefix=#{prefix}"
     end
