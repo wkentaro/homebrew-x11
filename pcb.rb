@@ -1,10 +1,10 @@
-require "formula"
-
 class Pcb < Formula
+  desc "An interactive printed circuit board editor"
   homepage "http://pcb.geda-project.org/"
-  head "git://git.geda-project.org/pcb.git"
   url "https://downloads.sourceforge.net/project/pcb/pcb/pcb-20140316/pcb-20140316.tar.gz"
-  sha1 "ec714ff136d1817e500e1a9e654e786883b9501e"
+  sha256 "82c4f39438ee4e278196a3b67ef021145dcfbb00519508ccf51aa7832121c950"
+  head "git://git.geda-project.org/pcb.git"
+  revision 1
 
   option "with-doc", "Build the documentation (requires LaTeX)."
 
@@ -18,7 +18,6 @@ class Pcb < Formula
   depends_on "gd"
   depends_on "glib"
   depends_on "gtkglext"
-  depends_on :x11
   depends_on :tex if build.with? "doc"
 
   conflicts_with "gts", :because => "both install `include/gts.h`"
@@ -36,6 +35,10 @@ class Pcb < Formula
     system "./configure", *args
     system "make"
     system "make", "install"
+  end
+
+  test do
+    system "#{bin}/pcb", "--version"
   end
 end
 
