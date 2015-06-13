@@ -1,8 +1,9 @@
 class Xchat < Formula
+  desc "An IRC chat program"
   homepage "http://xchat.org"
   url "http://xchat.org/files/source/2.8/xchat-2.8.8.tar.bz2"
-  sha1 "a4ac161e4e40f4bbabc492675a1ff4380dba8d68"
-  revision 1
+  sha256 "0d6d69437b5e1e45f3e66270fe369344943de8a1190e498fafa5296315a27db0"
+  revision 2
 
   bottle do
     root_url "https://downloads.sf.net/project/machomebrew/Bottles/x11"
@@ -15,7 +16,6 @@ class Xchat < Formula
   depends_on "openssl"
   depends_on "gettext"
   depends_on "gtk+"
-  depends_on :x11
 
   # Adjust to newer glib include conventions
   # Reported at https://sourceforge.net/tracker/?func=detail&aid=3446968&group_id=239&atid=100239
