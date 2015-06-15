@@ -27,8 +27,10 @@ class EasyTag < Formula
   depends_on "speex" => :optional
   depends_on "wavpack" => :optional
 
-  # fixes unknown linker flag error
-  # forces use of gtk3-update-icon-cache instead of gtk-update-icon-cache
+  # fixes unknown linker flag error: bug was filed as https://bugzilla.gnome.org/show_bug.cgi?id=750981
+  # forces use of gtk3-update-icon-cache instead of gtk-update-icon-cache. No bugreport should
+  # be filed for this since it only occurs because Homebrew renames gtk+3's gtk-update-icon-cache
+  # to gtk3-update-icon-cache in order to avoid a collision between gtk+ and gtk+3.
   patch :DATA
 
   def install

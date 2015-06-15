@@ -18,6 +18,7 @@ class Gtkwave < Formula
   depends_on "xz" # For LZMA support
 
   # patches to get gtk-mac-integration working properly
+  # email sent to author with diff, filing bugs on the sourceforge page has been disabled
   patch :DATA
 
   def install

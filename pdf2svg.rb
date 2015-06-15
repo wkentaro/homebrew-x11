@@ -12,6 +12,7 @@ class Pdf2svg < Formula
 
   # build script contains mandatory dependency on Gtk+ which is used nowhere by the code
   # this patch removes all references to Gtk+
+  # issue filed upstream: https://github.com/db9052/pdf2svg/issues/7
   patch :DATA
 
   def install

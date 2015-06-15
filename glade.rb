@@ -14,6 +14,7 @@ class Glade < Formula
   depends_on "gtk-mac-integration"
 
   # patch restores compatibility with the latest gtk-mac-integration version
+  # this bug has been filed: https://bugzilla.gnome.org/show_bug.cgi?id=730778
   patch :DATA
 
   def install

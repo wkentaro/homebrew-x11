@@ -3,6 +3,7 @@ class Gobby < Formula
   homepage "http://gobby.0x539.de"
   url "http://releases.0x539.de/gobby/gobby-0.5.0.tar.gz"
   sha256 "8ceb3598d27cfccdf9c9889b781c4c5c8e1731ca6beb183f5d4555644c06bd98"
+  revision 1
 
   head "git://git.0x539.de/git/gobby.git"
 
@@ -15,6 +16,8 @@ class Gobby < Formula
   # necessary to remove mandatory gtk-mac-integration
   # it's badly broken as it depends on an ancient version of ige-mac-integration
   # since it depends on gtk3, it doesn't even need gtk-mac-integration anymore
+  # This has already been fixed upstream: gtk2 support has been dropped completely
+  # and all traces of ige-mac-integration have been removed from the code
   patch :DATA
 
   depends_on "pkg-config" => :build

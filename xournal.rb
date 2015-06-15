@@ -13,6 +13,7 @@ class Xournal < Formula
   depends_on "libgnomecanvas"
 
   # patch removes all the X11 stuff from the code
+  # filed upstream as a bug: https://sourceforge.net/p/xournal/bugs/156/
   patch :DATA
 
   def install
