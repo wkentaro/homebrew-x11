@@ -1,55 +1,66 @@
-require "formula"
-
 class Yarp < Formula
+  desc "Yet Another Robot Platform"
   homepage "http://yarp.it"
+  url "https://github.com/robotology/yarp/archive/v2.3.64.tar.gz"
+  sha256 "3882b38c39ec9c5fdd06c68f3a4ad21da718bd2733ed7d6a5fb78d9f36dad6b2"
   head "https://github.com/robotology/yarp.git"
-  url "https://github.com/robotology/yarp/archive/v2.3.63.tar.gz"
-  sha1 "bef87cf5e53c1dc5b9fe4de90022cb8285405fa2"
 
-  option "without-shared", "Build only static version of YARP libraries"
+  option "with-qt5", "Build the Qt5 GUI applications"
+  option "with-yarprun-log", "Build with yarprun_log support"
+  option "with-opencv", "Build the opencv_grabber device"
+  option "with-lua", "Build with Lua bindings"
+  option "with-serial", "Build the serial/serialport devices"
 
   depends_on "pkg-config" => :build
   depends_on "cmake" => :build
   depends_on "ace"
   depends_on "gsl"
-  depends_on "gtk+"
-  depends_on "gtkmm"
-  depends_on "libglademm"
   depends_on "sqlite"
   depends_on "readline"
   depends_on "jpeg"
-  depends_on :x11
+  depends_on "homebrew/science/opencv" => :optional
+  depends_on "qt5" => :optional
+  depends_on "lua" => :optional
+  depends_on "swig" if build.with? "lua"
 
   def install
     args = std_cmake_args + %W[
       -DCREATE_LIB_MATH=TRUE
-      -DCREATE_GUIS=TRUE
-      -DCREATE_YMANAGER=TRUE
-      -DYARP_USE_SYSTEM_SQLITE=TRUE
+      -DCREATE_DEVICE_LIBRARY_MODULES=TRUE
       -DCREATE_OPTIONAL_CARRIERS=TRUE
       -DENABLE_yarpcar_mjpeg_carrier=TRUE
       -DENABLE_yarpcar_rossrv_carrier=TRUE
       -DENABLE_yarpcar_tcpros_carrier=TRUE
       -DENABLE_yarpcar_xmlrpc_carrier=TRUE
       -DENABLE_yarpcar_bayer_carrier=TRUE
-      -DUSE_LIBDC1394=FALSE
       -DENABLE_yarpcar_priority_carrier=TRUE
       -DCREATE_IDLS=TRUE
-      -DENABLE_yarpidl_thrift=TRUE
-      -DCREATE_YARPVIEW=TRUE
-      -DCREATE_YARPSCOPE=TRUE
-      -DCREATE_GYARPMANAGER=TRUE
-      ]
+    ]
 
-      if build.without? "shared"
-        args << "-DCREATE_SHARED_LIBRARY:BOOL=FALSE"
-      else
-        args << "-DCREATE_SHARED_LIBRARY:BOOL=TRUE"
-      end
-      args << "."
+    args << "-DCREATE_GUIS=TRUE" if build.with? "qt5"
+    args << "-DENABLE_YARPRUN_LOG=ON" if build.with? "yarprun-log"
+    args << "-DENABLE_yarpmod_opencv_grabber=ON" if build.with? "opencv"
+
+    if build.with? "lua"
+      args << "-DYARP_COMPILE_BINDINGS=ON"
+      args << "-DCREATE_LUA=ON"
+    end
+
+    if build.with? "serial"
+      args << "-DENABLE_yarpmod_serial=ON"
+      args << "-DENABLE_yarpmod_serialport=ON"
+    end
 
     system "cmake", *args
     system "make", "install"
+  end
+
+  def caveats
+    <<-EOS.undent
+    You need to add in your ~/.bash_profile or similar:
+
+      export YARP_DATA_DIRS=#{HOMEBREW_PREFIX}/share/yarp
+    EOS
   end
 
   test do
