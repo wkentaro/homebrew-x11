@@ -6,10 +6,10 @@ class Xchat < Formula
   revision 2
 
   bottle do
-    root_url "https://downloads.sf.net/project/machomebrew/Bottles/x11"
-    sha1 "e4b1483559996dddbc440044c7b5656ee827718f" => :yosemite
-    sha1 "fcbd34a03dbb1a3c348744ab6ff50df56a5e24d9" => :mavericks
-    sha1 "d9631c5b4680a3e8dda49d2a3c1291ea316dd15a" => :mountain_lion
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "1a6d55ef8ce33fdf58fadc64bb8c7664fdff9c851fcc9932e1bd8e0e83c85a44" => :yosemite
+    sha256 "7d9782053eafb2b0c2024c03546456fad00ec21800161b5c3e536f005c046bd3" => :mavericks
+    sha256 "aa66f27c3cbd710761deb02e525dfa4c4888c4d9216cb1d38036467dbd7fb12d" => :mountain_lion
   end
 
   depends_on "pkg-config" => :build
