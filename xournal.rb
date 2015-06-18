@@ -5,6 +5,13 @@ class Xournal < Formula
   sha256 "233887a38136452dcb4652c35d08366fc7355f57ed46753db83e3e0f3193ef30"
   revision 1
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "2cad9b6032951b5d353c4e97470ff812a9b94ce65927eb3e1a235acadd2052aa" => :yosemite
+    sha256 "bac8ddb9bf74264cfd72b55694a9d691cde9ec73e6c0e5ba9e9c5afbe207b02c" => :mavericks
+    sha256 "958893a243f5109aab08cf769cae3f9cc8a3fa04caeeffa568d04c110210d7e9" => :mountain_lion
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "pkg-config" => :build
