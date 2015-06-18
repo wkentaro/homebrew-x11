@@ -6,9 +6,9 @@ class Bochs < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
-    sha256 "fb8b148b05b1a8530fe3acacd1d48f73b8e6e3c0280dcd42c53e59be86528b4c" => :yosemite
-    sha256 "b34000337f75595e77ae5c3bf194ad4b49a24bc363187921218e2ac359ad58f9" => :mavericks
-    sha256 "d8eec0430e123c2d8e54b6212ba005bb384fa72c7a827f6be15a106426f22382" => :mountain_lion
+    sha256 "9efec04a05953eeb5a385b28ed1c8a2202e13bedcfcee3933baf32cf1eadfe80" => :yosemite
+    sha256 "43d3b3d637710ea229ef456716bc3b126e32d19e6b653ec4d4e061100e79af34" => :mavericks
+    sha256 "34a83396abc3570523eb4ea9d70d33dba353097228d03de7f5879af83a15443a" => :mountain_lion
   end
 
   depends_on "pkg-config" => :build
