@@ -4,6 +4,13 @@ class Gtksourceviewmm3 < Formula
   url "https://download.gnome.org/sources/gtksourceviewmm/3.12/gtksourceviewmm-3.12.0.tar.xz"
   sha256 "73939031bcc60e6ad31a315ec84b132deba15e5732de16e75fe424a619267ace"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "20127c394b0118cce2dc118283dbeeca991538a98133ec53fcab0e70dddc1393" => :yosemite
+    sha256 "5178487a12c67ad4c3072d82b8cdd087bd850db0c21f48104975319dbe0738ea" => :mavericks
+    sha256 "57434ea33514f8ead614043453c894f9ae50368fa7f0b093300ecde31cc187f3" => :mountain_lion
+  end
+
   depends_on "gtksourceview3"
   depends_on "pkg-config" => :build
   depends_on "gtkmm3"
