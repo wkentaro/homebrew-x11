@@ -5,6 +5,13 @@ class GedaGaf < Formula
   sha256 "bbf4773aef1b5a51a8d6f4c3fa288c047340cc62dd6e14d7928fcc6e4051b721"
   revision 1
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "dada3e2e03f650f40c22c380b97bf4dc718b5e9422c3205724c36c867fe44196" => :yosemite
+    sha256 "dc3a0c4ab574c82c8533db37b1cd3e957bde5830be68123277d03522c222e4be" => :mavericks
+    sha256 "dba0341dfb59aa2db5346069c3196e556f9421d47bea79bc0ffa1808f23d9fb0" => :mountain_lion
+  end
+
   devel do
     url "http://ftp.geda-project.org/geda-gaf/unstable/v1.9/1.9.1/geda-gaf-1.9.1.tar.gz"
     sha256 "563c4ae8ba72824e873094d9133425b8f142f7e5b25cd6da33f69b2d99c980a3"
