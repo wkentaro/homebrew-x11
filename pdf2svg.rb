@@ -4,6 +4,14 @@ class Pdf2svg < Formula
   url "http://www.cityinthesky.co.uk/wp-content/uploads/2013/10/pdf2svg-0.2.2.tar.gz"
   sha256 "c2a29cc81d01fea220523abad39c400e9c5411b395b6ba3ccbedb4cd398ec6cb"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    cellar :any
+    sha256 "41ab99882a3ff083b07f7026cb9377ca07b6d5937a69b3430036d5bf7a12cd41" => :yosemite
+    sha256 "e3a9d5720c40c9ec76723df065c1f82aef70a5aaf1980ac6166df44dd111f1a4" => :mavericks
+    sha256 "9bfc28821286439d4adcc1d55be1c8a71e9cc2aa209468b9cfefd09112fd87ef" => :mountain_lion
+  end
+
   depends_on "pkg-config" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
