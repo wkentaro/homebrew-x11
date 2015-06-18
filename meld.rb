@@ -1,20 +1,29 @@
-require 'formula'
-
 class Meld < Formula
-  homepage 'http://meldmerge.org'
-  url 'http://ftp.gnome.org/pub/GNOME/sources/meld/1.8/meld-1.8.6.tar.xz'
-  sha256 'af96682b8f4bf3ad4221c853b1516218d62a17ff43c38f4a83e7e8ac6736e8a5'
+  desc "A visual diff tool for developers"
+  homepage "http://meldmerge.org"
+  url "https://download.gnome.org/sources/meld/3.12/meld-3.12.3.tar.xz"
+  sha256 "db3572c5c6905b09f4fc28415a7f6f223014391492dd2165ed1bc8512ac4e6fd"
 
-  depends_on 'intltool' => :build
-  depends_on 'rarian' => :build
-  depends_on :x11
+  depends_on "intltool" => :build
+  depends_on "itstool" => :build
+  depends_on "libxml2" => [:build, "with-python"]
   depends_on :python
-  depends_on 'pygtk'
-  depends_on 'pygtksourceview'
-  depends_on 'pygobject'
+  depends_on "gtksourceview3"
+  depends_on "pygobject3"
+  depends_on "gobject-introspection"
 
   def install
-    system "make", "prefix=#{prefix}", "install"
-    bin.env_script_all_files(libexec+'bin', :PYTHONPATH => ENV['PYTHONPATH'])
+    ENV.append_path "PYTHONPATH", "#{Formula["libxml2"].opt_lib}/python2.7/site-packages"
+    system "python", "setup.py", "--no-update-icon-cache",
+           "--no-compile-schemas", "install", "--prefix=#{prefix}"
+  end
+
+  def post_install
+    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+    system "#{Formula["gtk+3"].opt_bin}/gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
+  end
+
+  test do
+    system "#{bin}/meld", "--version"
   end
 end
