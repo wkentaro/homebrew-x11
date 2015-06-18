@@ -9,9 +9,9 @@ class Threadscope < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
-    sha256 "ac75a07f5143b046c8390e58acf0dd10dd2bf7850a4b5602582f0f1b27ba31e7" => :yosemite
-    sha256 "adcd744ebdd49521eb0065978db916bd57b617099ce3c9fe65b236b79b411d5b" => :mavericks
-    sha256 "75e986926847ba806c046265316b518c8b8f7f14c726df60c7ede053fe82bf3f" => :mountain_lion
+    sha256 "c6852b8d87b9e0004cf94e92a3b19faa35c142f6224b50ed42f282685c4a22d8" => :yosemite
+    sha256 "8b430ceeb2b07d4d9442b607537d8ad4bc51ffe06611db25b1c210bed93becb0" => :mavericks
+    sha256 "ba0ed2c9b22c9ed5baef6516d0569d21201d529142075eeba0e0ce20968592ec" => :mountain_lion
   end
 
   depends_on "cabal-install" => :build
