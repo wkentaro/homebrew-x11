@@ -6,10 +6,11 @@ class Gtkwave < Formula
   revision 1
 
   bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
     cellar :any
-    sha1 "a606e5f48ba5aba2a413400009171c4e72e72520" => :yosemite
-    sha1 "17b37f240c67d2ead954232b674efa990dc381b5" => :mavericks
-    sha1 "d4354c0d03b86470803a93c02a3718f68b8bed43" => :mountain_lion
+    sha256 "290a1022afc3578c32d924447698c5238c4e30538336eeacc2b096236f9efde7" => :yosemite
+    sha256 "5cf8d5a2405987be2cd7c6e01284aba5befe7616decaf007732636bb8e30291e" => :mavericks
+    sha256 "5971a74f75e0c2f9ac99863391d11744b56253a16ca80fd52ff821eeb7af4c4f" => :mountain_lion
   end
 
   depends_on "pkg-config" => :build
