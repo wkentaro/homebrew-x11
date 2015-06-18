@@ -4,6 +4,13 @@ class Ggobi < Formula
   url "http://www.ggobi.org/downloads/ggobi-2.1.11.tar.bz2"
   sha256 "2c4ddc3ab71877ba184523e47b0637526e6f3701bd9afb6472e6dfc25646aed7"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "e63b0d69aae19e59652a7661f568505164c192168e3ddf1db16ffd33cf75ffb4" => :yosemite
+    sha256 "9af14eb802acb8bd7b063ad778fe5d9d44d93ee031a39bdc12737a2a84017c2a" => :mavericks
+    sha256 "d22248e9494659675b6a7d41019b5a7f75d6f369658d577226eba80fa53f9cb4" => :mountain_lion
+  end
+
   depends_on "pkg-config" => :build
   depends_on "gtk+"
   depends_on "gettext"
