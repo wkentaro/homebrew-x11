@@ -1,6 +1,13 @@
 class Gerbv < Formula
   desc "A Gerber (RS-274X) viewer"
   homepage "http://gerbv.gpleda.org/"
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "fa685c99327d11fb397e1618cdcd0d819018f6cbabc2e839a7bb780d99f2b11c" => :yosemite
+    sha256 "6b1fcdc62f5a072b1387d5e7f82ae0bdba07e59ab65c2de6b7bc6b4ff46c8f6a" => :mavericks
+    sha256 "b560626fe6ef8999e1099fa9550cc68cd2964edad28ffef282621eccb5020a6f" => :mountain_lion
+  end
+
   # 2.6.1 is the latest official stable release but it is very buggy and incomplete
   url "https://downloads.sourceforge.net/project/gerbv/gerbv/gerbv-2.6.0/gerbv-2.6.0.tar.gz"
   sha256 "5c55425c3493bc8407949be8b4e572434a6b378f5727cc0dcef97dc2e7574dd0"
