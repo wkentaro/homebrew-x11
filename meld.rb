@@ -4,6 +4,13 @@ class Meld < Formula
   url "https://download.gnome.org/sources/meld/3.12/meld-3.12.3.tar.xz"
   sha256 "db3572c5c6905b09f4fc28415a7f6f223014391492dd2165ed1bc8512ac4e6fd"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "f89bb13a8259ebb369b4d4c0d4544d0463e24b915fccfc2251bccd935b61dcfb" => :yosemite
+    sha256 "919f88e6f8589380b4badac2e3774c295fcec489916aa9deb1620a07573acaaf" => :mavericks
+    sha256 "fcb05111aa42887745b558e3f612bc4566fc14dfead4b7261ed3292795d73e05" => :mountain_lion
+  end
+
   depends_on "intltool" => :build
   depends_on "itstool" => :build
   depends_on "libxml2" => [:build, "with-python"]
