@@ -4,6 +4,12 @@ class Wcm < Formula
   url "https://github.com/corporateshark/WCMCommander/archive/release-0.20.0.tar.gz"
   sha256 "f166cfd0ff8511642402892cb8eee3b20c845f82c04ca4ca940996e611aa5aba"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "87e8b250aa565580146119e98575ac76dcb3707ba682c60149b9b4a41c7faec4" => :yosemite
+    sha256 "fb4825624b5960fb881d147b370aec988f371c57ee21bc9f3ec61164b3948461" => :mavericks
+  end
+
   depends_on "cmake" => :build
   depends_on "freetype"
   depends_on "libssh2"
