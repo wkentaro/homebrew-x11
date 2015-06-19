@@ -6,8 +6,10 @@ class Wcm < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
-    sha256 "87e8b250aa565580146119e98575ac76dcb3707ba682c60149b9b4a41c7faec4" => :yosemite
-    sha256 "fb4825624b5960fb881d147b370aec988f371c57ee21bc9f3ec61164b3948461" => :mavericks
+    revision 1
+    sha256 "7a856cd42b0264ecba4b8ff9681e007772d9fd7285ac676de5b16e72d6cf1767" => :yosemite
+    sha256 "2bd7a1f210599a68e55563c2ff4fcc64e942878b8695a5cfe957b8958680effc" => :mavericks
+    sha256 "e13f821249adb87673c14295b3e740eb08c6a893aceed75aca15250537fb7737" => :mountain_lion
   end
 
   depends_on "cmake" => :build
