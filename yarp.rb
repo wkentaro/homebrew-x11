@@ -5,6 +5,13 @@ class Yarp < Formula
   sha256 "3882b38c39ec9c5fdd06c68f3a4ad21da718bd2733ed7d6a5fb78d9f36dad6b2"
   head "https://github.com/robotology/yarp.git"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "3643a7e5a1c46594c8911f1160887d7adefe01171ed44954ff7d1a1dd768a7f9" => :yosemite
+    sha256 "c2696f66328bcf922d1f0fa47091a0687df158dde49ef4c806785bf0dacdfbb6" => :mavericks
+    sha256 "c28a80ea9995bcfe52be97d10ab0b76a3b998feb990360f1c73673bc40e40c76" => :mountain_lion
+  end
+
   option "with-qt5", "Build the Qt5 GUI applications"
   option "with-yarprun-log", "Build with yarprun_log support"
   option "with-opencv", "Build the opencv_grabber device"
