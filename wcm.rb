@@ -14,12 +14,12 @@ class Wcm < Formula
   depends_on "freetype"
   depends_on "libssh2"
   depends_on :x11
-  depends_on :macos => :mavericks
 
   needs :cxx11
 
   def install
     ENV.cxx11
+
     system "cmake", ".", "-DWITH_SMBCLIENT=OFF", *std_cmake_args
     system "make", "all"
     system "make", "install"
