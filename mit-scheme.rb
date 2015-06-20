@@ -7,10 +7,10 @@ class MitScheme < Formula
   revision 1
 
   bottle do
-    revision 1
-    sha1 "af57614a2fba575d897aead31686ee5cd363fb4f" => :yosemite
-    sha1 "7bdca846c5d7efb137b05fa6bff6b755e8eed3fa" => :mavericks
-    sha1 "f1c8d3788f6308be61948350ea33dd7ce085307f" => :mountain_lion
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "736068c47a7b3dd3f683be45140afc10ea1af016ea4f39bb571e71ae1d609a78" => :yosemite
+    sha256 "0ba9fef9bc17b763339d9dbf9e370963db39f0655f5bfde6e05834abbce80397" => :mavericks
+    sha256 "10dcb8d02d2733041092df680440f14a2654ff620bfac4fb03ca523198121263" => :mountain_lion
   end
 
   conflicts_with "tinyscheme", :because => "both install a `scheme` binary"
