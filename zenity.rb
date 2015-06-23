@@ -1,7 +1,8 @@
 class Zenity < Formula
+  desc "GTK+ dialog boxes for the command-line"
   homepage "https://live.gnome.org/Zenity"
-  url "http://ftp.gnome.org/pub/gnome/sources/zenity/3.14/zenity-3.14.0.tar.xz"
-  sha1 "a38b98a99c44b05c1a8573fa8e0cc53a191868fb"
+  url "https://download.gnome.org/sources/zenity/3.16/zenity-3.16.3.tar.xz"
+  sha256 "7fe28016fbc5b1fc6d8f730d8eabd5ae2d8b7d67c8bfa0270811ff0c2bfb1eba"
 
   bottle do
     root_url "https://downloads.sf.net/project/machomebrew/Bottles/x11"
@@ -17,7 +18,6 @@ class Zenity < Formula
   depends_on "gtk+3"
   depends_on "gnome-doc-utils"
   depends_on "scrollkeeper"
-  depends_on :x11
 
   def install
     ENV.append_path "PYTHONPATH", "#{Formula["libxml2"].opt_lib}/python2.7/site-packages"
@@ -25,5 +25,9 @@ class Zenity < Formula
     system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
+  end
+
+  test do
+    system "#{bin}/zenity", "--help"
   end
 end
