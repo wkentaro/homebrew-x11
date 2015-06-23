@@ -5,10 +5,10 @@ class Zenity < Formula
   sha256 "7fe28016fbc5b1fc6d8f730d8eabd5ae2d8b7d67c8bfa0270811ff0c2bfb1eba"
 
   bottle do
-    root_url "https://downloads.sf.net/project/machomebrew/Bottles/x11"
-    sha1 "3426d2077fa335d2c215cce4903741c748e578c2" => :yosemite
-    sha1 "9b356978fb0b758d0e420d3fdfa54ba538e5663b" => :mavericks
-    sha1 "aee2c119bed7d6cf1c844f9670a11b0becb806d2" => :mountain_lion
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "105cbdb34aaafe239277e926c7892aa636a20ccb611013c8fe662fd649286423" => :yosemite
+    sha256 "12e5b7d3c268e057460a5e3656e5cb02519172e8b5fc05f1fa92457d8c29e095" => :mavericks
+    sha256 "d5a679656230f98c0f642d2825a82f4cb8e912f90fe68f6c78ceef993649131c" => :mountain_lion
   end
 
   depends_on "pkg-config" => :build
