@@ -6,9 +6,10 @@ class EasyTag < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
-    sha256 "6b6ee30586f52871b3cc56ab38228bcd90fc4b1972bcf5a90646b40a1c1ab8d3" => :yosemite
-    sha256 "735400338d00bec5649fe0f5a6d91fd88abbbe99ec18e0aa4bd9f9dbc6c02461" => :mavericks
-    sha256 "14b6ab1d5dd15fbe734d461eb79c7f759dac9a4eda4405f37888b36f4d0625fd" => :mountain_lion
+    revision 1
+    sha256 "5432c1f65999e5654bb19ca462af30c7c7aa88a896c4eeed3ce4061e19cdc182" => :yosemite
+    sha256 "595ea3a66e0f8be6e20a03eb69a7669932048b60e30e2adcf2ff9a13a7525dd5" => :mavericks
+    sha256 "76a6da0f8bfb9186c9ed61d05369d395dd01a6449e0cf9a656cd711535833477" => :mountain_lion
   end
 
   depends_on "pkg-config" => :build
