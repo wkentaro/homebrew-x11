@@ -7,9 +7,9 @@ class Meld < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
-    sha256 "f89bb13a8259ebb369b4d4c0d4544d0463e24b915fccfc2251bccd935b61dcfb" => :yosemite
-    sha256 "919f88e6f8589380b4badac2e3774c295fcec489916aa9deb1620a07573acaaf" => :mavericks
-    sha256 "fcb05111aa42887745b558e3f612bc4566fc14dfead4b7261ed3292795d73e05" => :mountain_lion
+    sha256 "be8062951844b1d73a550b886e7fc09318f4b7bc4024c259241753aa1cf0c04a" => :yosemite
+    sha256 "0a92751895c5bcb9dc577bf5bbacbf4ae413b6c0feaef1921bc7b75922e90436" => :mavericks
+    sha256 "c51f9a6f5f1e75ea4fb48676bc9e449dbdb53db41a43dc6a28d03f874ee27388" => :mountain_lion
   end
 
   depends_on "intltool" => :build
