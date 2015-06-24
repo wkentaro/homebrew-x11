@@ -1,6 +1,7 @@
 class Gnumeric < Formula
+  desc "GNOME Spreadsheet Application"
   homepage "https://projects.gnome.org/gnumeric/"
-  url "http://ftp.gnome.org/pub/GNOME/sources/gnumeric/1.12/gnumeric-1.12.22.tar.xz"
+  url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.22.tar.xz"
   sha256 "3908cfd6520b599eefefe222aadeaa5126394b54d9a9a7f5e0f938eb674dcf47"
 
   bottle do
@@ -18,6 +19,7 @@ class Gnumeric < Formula
   depends_on "goffice"
   depends_on "pygobject" if build.include? "python-scripting"
   depends_on "rarian"
+  depends_on "gnome-icon-theme"
 
   deprecated_option "python-scripting" => "with-python-scripting"
 
