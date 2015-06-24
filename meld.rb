@@ -3,6 +3,7 @@ class Meld < Formula
   homepage "http://meldmerge.org"
   url "https://download.gnome.org/sources/meld/3.12/meld-3.12.3.tar.xz"
   sha256 "db3572c5c6905b09f4fc28415a7f6f223014391492dd2165ed1bc8512ac4e6fd"
+  revision 1
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
@@ -18,6 +19,8 @@ class Meld < Formula
   depends_on "gtksourceview3"
   depends_on "pygobject3"
   depends_on "gobject-introspection"
+  depends_on "hicolor-icon-theme"
+  depends_on "gnome-icon-theme"
 
   def install
     ENV.append_path "PYTHONPATH", "#{Formula["libxml2"].opt_lib}/python2.7/site-packages"
