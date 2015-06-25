@@ -7,9 +7,9 @@ class Pdf2svg < Formula
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
     cellar :any
-    sha256 "41ab99882a3ff083b07f7026cb9377ca07b6d5937a69b3430036d5bf7a12cd41" => :yosemite
-    sha256 "e3a9d5720c40c9ec76723df065c1f82aef70a5aaf1980ac6166df44dd111f1a4" => :mavericks
-    sha256 "9bfc28821286439d4adcc1d55be1c8a71e9cc2aa209468b9cfefd09112fd87ef" => :mountain_lion
+    sha256 "852f856ee819872e3369a9c9aac6f8596b2efa2a5b0489fdf75fa7b83d0f8249" => :yosemite
+    sha256 "048368bd4847a9ae310efcb699b0a22f6e2ef7072127187e5ba2b43430cd2566" => :mavericks
+    sha256 "d02bbc276dab02d3c6290f981ce7b91b9f3c271171d9fedfc0bff87e630c8fd5" => :mountain_lion
   end
 
   depends_on "pkg-config" => :build
