@@ -7,9 +7,9 @@ class SwiProlog < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
-    sha256 "449b42660e1b302fb8822288fd7a3882cc6f94b33d329cce66cf84255e99a0a4" => :yosemite
-    sha256 "a664d7d4790161fa11aa6de62a463dbad1b7b140507da2ebdfef531437190fcf" => :mavericks
-    sha256 "331b630a848d66c9bc4687d5e9c23ff877b5f4e077f2097afd05095eabba8c98" => :mountain_lion
+    sha256 "e185ea9d2d2a9f4c8eedb306cacfa9a823a0ea2065c611dcbcb1e1e1c0788848" => :yosemite
+    sha256 "15de00e8e86b82e3021edef2f457252a1ae02b57ad14eda2f6c50a650f21fbea" => :mavericks
+    sha256 "b8054030907b654bc9eabf6d71331a6b85a7ed82adcc7007ee328ff9a50c863c" => :mountain_lion
   end
 
   devel do
