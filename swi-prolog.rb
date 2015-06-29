@@ -2,8 +2,8 @@ require "formula"
 
 class SwiProlog < Formula
   homepage "http://www.swi-prolog.org/"
-  url "http://www.swi-prolog.org/download/stable/src/swipl-7.2.0.tar.gz"
-  sha256 "801423b8293d08b96b575ffa96d91cce3acf2473f04c23d58657dd668287f8cb"
+  url "http://www.swi-prolog.org/download/stable/src/swipl-7.2.2.tar.gz"
+  sha256 "c137bbe1d652a6aaa003278045e592637cd9fd5f1d52b05f9f0751bfd9449c8d"
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
@@ -13,8 +13,8 @@ class SwiProlog < Formula
   end
 
   devel do
-    url "http://www.swi-prolog.org/download/devel/src/swipl-7.3.1.tar.gz"
-    sha256 "9a62b048f604af710c03a2055e3382c84c9f2c342c6fb8fa257332ede6763062"
+    url "http://www.swi-prolog.org/download/devel/src/swipl-7.3.3.tar.gz"
+    sha256 "fbdb14d4b780f210feb9a3656fb8fabcc2f8aa95d172b1cf2847189e2bd7df6f"
   end
 
   head do
