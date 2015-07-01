@@ -60,6 +60,7 @@ class Yarp < Formula
 
     system "cmake", *args
     system "make", "install"
+    bash_completion.install "scripts/yarp_completion"
   end
 
   def caveats
