@@ -7,9 +7,10 @@ class Yarp < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
-    sha256 "3643a7e5a1c46594c8911f1160887d7adefe01171ed44954ff7d1a1dd768a7f9" => :yosemite
-    sha256 "c2696f66328bcf922d1f0fa47091a0687df158dde49ef4c806785bf0dacdfbb6" => :mavericks
-    sha256 "c28a80ea9995bcfe52be97d10ab0b76a3b998feb990360f1c73673bc40e40c76" => :mountain_lion
+    revision 1
+    sha256 "de4e5f034538991b5184c7030f79a44cb4bd76f7d4cbd2385c9e4141ea44803a" => :yosemite
+    sha256 "658267b21ae11c68b5247c8826f2cf5ad504791d16e1eeee445801294410bc92" => :mavericks
+    sha256 "23dc0cb343be352df00207063314257f8c3eef8ee4f4622005f5183423799d8d" => :mountain_lion
   end
 
   option "with-qt5", "Build the Qt5 GUI applications"
