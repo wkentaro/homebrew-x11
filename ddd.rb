@@ -1,10 +1,8 @@
-require 'formula'
-
 class Ddd < Formula
-  homepage 'http://www.gnu.org/s/ddd/'
-  url 'http://ftpmirror.gnu.org/ddd/ddd-3.3.12.tar.gz'
-  mirror 'http://ftp.gnu.org/gnu/ddd/ddd-3.3.12.tar.gz'
-  sha1 'b91d2dfb1145af409138bd34517a898341724e56'
+  homepage "https://www.gnu.org/s/ddd/"
+  url "http://ftpmirror.gnu.org/ddd/ddd-3.3.12.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/ddd/ddd-3.3.12.tar.gz"
+  sha256 "3ad6cd67d7f4b1d6b2d38537261564a0d26aaed077bf25c51efc1474d0e8b65c"
   revision 1
 
   bottle do
@@ -13,20 +11,20 @@ class Ddd < Formula
     sha256 "faea737b1f709c7d1a068c34a37a6f13a5c23fc7bf3e3fc6149479014c7c132b" => :mountain_lion
   end
 
-  depends_on 'openmotif'
+  depends_on "openmotif"
   depends_on :x11
 
   # Needed for OSX 10.9 DP6 build failure:
   # https://savannah.gnu.org/patch/?8178
   patch :p0 do
     url "https://savannah.gnu.org/patch/download.php?file_id=29114"
-    sha1 "4f7406e7698f54f609ced955f0cc90374cc45431"
+    sha256 "aaacae79ce27446ead3483123abef0f8222ebc13fd61627bfadad96016248af6"
   end if MacOS.version >= :mavericks
 
   # https://savannah.gnu.org/bugs/?41997
   patch do
     url "https://savannah.gnu.org/patch/download.php?file_id=31132"
-    sha1 "a004e64cbfa46333b3bba1a910a4f4e9049dc5d2"
+    sha256 "f3683f23c4b4ff89ba701660031d4b5ef27594076f6ef68814903ff3141f6714"
   end
 
   def install
@@ -44,6 +42,6 @@ class Ddd < Formula
     ENV.deparallelize
     system "make install EXEEXT=exe"
 
-    mv bin/'dddexe', bin/'ddd'
+    mv bin/"dddexe", bin/"ddd"
   end
 end
