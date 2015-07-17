@@ -1,12 +1,10 @@
-require "formula"
-
 class Geomview < Formula
   homepage "http://www.geomview.org"
 
   # Restore the SF URL to the default when SF is back again
   url "http://http.debian.net/debian/pool/main/g/geomview/geomview_1.9.5.orig.tar.gz"
   mirror "https://downloads.sourceforge.net/project/geomview/geomview/1.9.5/geomview-1.9.5.tar.gz"
-  sha1 "26186046dc18ab3872e7104745ae474908ee54d1"
+  sha256 "67edb3005a22ed2bf06f0790303ee3f523011ba069c10db8aef263ac1a1b02c0"
   revision 1
 
   bottle do
