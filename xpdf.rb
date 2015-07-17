@@ -6,6 +6,12 @@ class Xpdf < Formula
   sha1 "b9b1dbb0335742a09d0442c60fd02f4f934618bd"
   revision 1
 
+  bottle do
+    sha256 "da1db4af229f785317209a44b6e23f37988a8611fb10a8f75cd4ab626b5a4e08" => :yosemite
+    sha256 "c68ef386a3d9c60cf751086d13a6c9ad03e441b841ebac25a15f59cafd7ead89" => :mavericks
+    sha256 "76c1f24fc404ee277023d3c488180fdc5a0b9e4c8fc18092a7318121375ea3d0" => :mountain_lion
+  end
+
   depends_on "openmotif"
   depends_on "freetype"
   depends_on :x11
