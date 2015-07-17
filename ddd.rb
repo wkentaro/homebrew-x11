@@ -7,6 +7,12 @@ class Ddd < Formula
   sha1 'b91d2dfb1145af409138bd34517a898341724e56'
   revision 1
 
+  bottle do
+    sha256 "10fadf3297a98b3682f312594a67707f78b6feee6f8ddfa616f4943bd2f5e222" => :yosemite
+    sha256 "e35574c21a4cd7192596d676e79029964482f623ecaac9372e666f79b276263a" => :mavericks
+    sha256 "faea737b1f709c7d1a068c34a37a6f13a5c23fc7bf3e3fc6149479014c7c132b" => :mountain_lion
+  end
+
   depends_on 'openmotif'
   depends_on :x11
 
