@@ -5,10 +5,9 @@ class Grace < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
-    sha256 "c43911a967268be84fcc6c63c95d7c31dceaa86bae27e93717c486ecad2b5a56" => :yosemite
-    sha256 "31d319f10c0416849a1e7dc408cde9f9025cf594ee9f9e4d07eef80177d9fc48" => :mavericks
-    sha256 "b0cd52ba67d4e68939b5dcb55993d74faa934a935c5c50e638610d6371105bc8" => :mountain_lion
+    sha256 "f19e0ebdfa9a35e179bf2df57be26e044e6bf05bf0a26c510413b625db7ef663" => :yosemite
+    sha256 "13b146752da42b360dc7593b735c2f832ab21e19cc562af23fd6651325f528a7" => :mavericks
+    sha256 "140d6cbe6068aa81ade6b46dfe0feca2221a69f8df35130517338b974f44c565" => :mountain_lion
   end
 
   depends_on :x11
