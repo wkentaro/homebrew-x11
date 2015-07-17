@@ -5,8 +5,9 @@ class Ddd < Formula
   url 'http://ftpmirror.gnu.org/ddd/ddd-3.3.12.tar.gz'
   mirror 'http://ftp.gnu.org/gnu/ddd/ddd-3.3.12.tar.gz'
   sha1 'b91d2dfb1145af409138bd34517a898341724e56'
+  revision 1
 
-  depends_on 'lesstif'
+  depends_on 'openmotif'
   depends_on :x11
 
   # Needed for OSX 10.9 DP6 build failure:
