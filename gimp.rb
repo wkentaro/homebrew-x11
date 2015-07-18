@@ -12,10 +12,9 @@ class Gimp < Formula
   end
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
-    sha256 "fd5b0d50ae84e060b3056fbd9a4062a65705bcd3682b89982dca7e9316e290be" => :yosemite
-    sha256 "0fe19bce7983265a835dfa899325f0adaed4e966fc5a7a6c6af9c53bf4d2a62d" => :mavericks
-    sha256 "46fe567462e8ff5f76bc143b3321384f5cf06f430d13b2aa4851db7541d41ae0" => :mountain_lion
+    sha256 "8021bf2728b7189d2922cca68a40f53773e4d079053fc3357bc1750cf9875c8c" => :yosemite
+    sha256 "52a2938d2e67222d7f6ff972dfc8715e68d5e505b80d4b9e5ce3fc70668d74da" => :mavericks
+    sha256 "29551de7ab55f5ecdec2b19edc9c9a329b10160eaca25fc1368bb0824aaeda7c" => :mountain_lion
   end
 
   head do
