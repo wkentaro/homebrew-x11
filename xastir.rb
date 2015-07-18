@@ -6,9 +6,9 @@ class Xastir < Formula
   revision 2
 
   bottle do
-    sha256 "8102eea7c0c8e3ff42d75dd93977ad5fb13f1da42811dddf412c626a3a311949" => :yosemite
-    sha256 "f2c446dcb0d5601c9b4a3f5a8589118a4eaa45ee835314fec013f997af7be1b2" => :mavericks
-    sha256 "1eb333db4d86934f8bfb0844f2872831e106fe2d49d91f243c40d01f72ea6a6b" => :mountain_lion
+    sha256 "2189103506cf98d4cd0fb792b965106617b07909e2953f29544a81d4199f9f81" => :yosemite
+    sha256 "59fbf0ad507a20a71def46cb378cb3d41b3bffea8c5abf20d7e74aea8612ca82" => :mavericks
+    sha256 "78ea252ec39fe3f5cc9b8894e9758a96bbd309a6d9ef59c5d88338faa80f73fc" => :mountain_lion
   end
 
   depends_on "proj"
