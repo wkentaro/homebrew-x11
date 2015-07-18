@@ -6,10 +6,9 @@ class Geeqie < Formula
   revision 2
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
-    sha256 "48841dc3b56b889b2f6fa27292f4a878c48914a0a3e08f28a3251435784e86b0" => :yosemite
-    sha256 "3c6da4b9e728231f8af7839ac3c63792a2330fe08f5c38138c6d4d783d5813b0" => :mavericks
-    sha256 "7144f1ecdb495ffd82d8130059b55d2a12a80cea1087a0b633f504ae755f8877" => :mountain_lion
+    sha256 "66ebef31e8351dd86e3121d5574a429547dd7f9f8e6c87058e3c69c8675a7e0b" => :yosemite
+    sha256 "ee20b9403c52f9a7f448d2fab5270bcec0e3787fc3a8fe6cac9dbf18d65fced3" => :mavericks
+    sha256 "278d6700b28fcccbc3c90d9af308ea298ce5cad7a3c5b72910a31998e8763ed8" => :mountain_lion
   end
 
   depends_on "pkg-config" => :build
