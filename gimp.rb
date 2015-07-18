@@ -1,9 +1,15 @@
 class Gimp < Formula
   desc "GNU Image Manipulation Program"
   homepage "http://www.gimp.org"
-  url "http://download.gimp.org/pub/gimp/v2.8/gimp-2.8.14.tar.bz2"
-  sha256 "d82a958641c9c752d68e35f65840925c08e314cea90222ad845892a40e05b22d"
-  head "https://github.com/GNOME/gimp.git", :branch => "gimp-2-8"
+  revision 1
+
+  stable do
+    url "http://download.gimp.org/pub/gimp/v2.8/gimp-2.8.14.tar.bz2"
+    sha256 "d82a958641c9c752d68e35f65840925c08e314cea90222ad845892a40e05b22d"
+
+    # 2.8.14 cannot use >0.2.x Gegl. Fails during configure.
+    depends_on "homebrew/versions/gegl02"
+  end
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
@@ -12,11 +18,16 @@ class Gimp < Formula
     sha256 "46fe567462e8ff5f76bc143b3321384f5cf06f430d13b2aa4851db7541d41ae0" => :mountain_lion
   end
 
+  head do
+    url "https://github.com/GNOME/gimp.git", :branch => "gimp-2-8"
+
+    depends_on "gegl"
+  end
+
   depends_on :x11 => :recommended
   depends_on "pkg-config" => :build
   depends_on "gettext" => :build
   depends_on "intltool" => :build
-  depends_on "gegl"
   depends_on "babl"
   depends_on "fontconfig"
   depends_on "pango"
