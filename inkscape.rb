@@ -7,10 +7,9 @@ class Inkscape < Formula
   revision 2
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
-    sha256 "4f08301a4876cf58ccebd4bbbe3a88b0bbd2b80190bc94f0edac70481571c119" => :yosemite
-    sha256 "4f29be794837344bde0a50665cdf33b1ea790573ca06ec13b9609dc6527be44b" => :mavericks
-    sha256 "2001490c6088f244448096ee7fdb47d09d1ab2a0d27910a1eeb656b1b2e9392b" => :mountain_lion
+    sha256 "b8178793aea18bcd80aa660949a8fd6e8e13f9668b93973f15a8ab3ffe9caea6" => :yosemite
+    sha256 "10c3882dd6a99421e58c587f1f388a89d2b2a11d63c3bc6a8b72fb0336527e0b" => :mavericks
+    sha256 "4362bbfcb8b44b4c53ea7f16f3c840bcea6a87e5145f0c1dc11623504352e6a9" => :mountain_lion
   end
 
   head do
