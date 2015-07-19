@@ -4,7 +4,7 @@ class Inkscape < Formula
   url "https://inkscape.org/en/gallery/item/3854/inkscape-0.91.tar.gz"
   mirror "https://mirrors.kernel.org/debian/pool/main/i/inkscape/inkscape_0.91.orig.tar.gz"
   sha256 "2ca3cfbc8db53e4a4f20650bf50c7ce692a88dcbf41ebc0c92cd24e46500db20"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-x11"
