@@ -5,10 +5,9 @@ class Imake < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
-    sha256 "c87f83a1a19a9b75ad66550b728b6d079ee40c422af1fb1c63814d574c35379a" => :yosemite
-    sha256 "e623f7ff86eb5a0d1231b7cfde05739ae049ea3e0faf84741bb4f003a2bc028a" => :mavericks
-    sha256 "e52e0277c21eb66f1bb70f65a4c30e2f4a8b85567d14dd75e549c9c6af8b7472" => :mountain_lion
+    sha256 "51e11d2fd584dcd64de2eac798e3aa0338a9a4381ee6ff9668f644592d3d406b" => :yosemite
+    sha256 "59c69499aa39e82294efdd1ae3eb410b858831118becf6547e48b95a679e292d" => :mavericks
+    sha256 "581af6e0f66567983ed06c8e20f9a461acee4570c30c2e7b4a670314d6a49a06" => :mountain_lion
   end
 
   depends_on "pkg-config" => :build
