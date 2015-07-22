@@ -6,7 +6,6 @@ class Geany < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "f58bd5addace94aae2046a41dbdaae7c26d0cdc4766eb27f53adbf708b3e3858" => :yosemite
     sha256 "6b42d99318763e96e97cc368802994f13c2ba6eb2ddf2553d67d8ce42136cdee" => :mavericks
     sha256 "1c06e1f0f6930e3c2aa4d9a9ec30e209b42750452bd8706462e8ad7193cda71e" => :mountain_lion

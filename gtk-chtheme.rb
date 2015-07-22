@@ -6,7 +6,6 @@ class GtkChtheme < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     cellar :any
     sha256 "4e1559fa2ef3535ab4b8e90eab0956be94fde3a34250a96663957a457d3a9a7c" => :yosemite
     sha256 "697dcc6f584f5b3b2855aaec6ffe2c50a026de54c17b135c7c84079376fa3d4d" => :mavericks

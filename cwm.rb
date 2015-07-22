@@ -1,10 +1,9 @@
 class Cwm < Formula
   homepage "https://github.com/chneukirchen/cwm"
   url "https://github.com/chneukirchen/cwm/archive/v5.6.tar.gz"
-  sha1 "637f615a2a5944070cfe2a5fd0125daa461967b5"
+  sha256 "006320bb1716cc0f93bac5634dcccd01f21d468263b5fc9d1be2dd11078a0625"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     cellar :any
     sha256 "66505c17dbe6aabfc53d2cfd0d9b09f77ca384637ffcf99a209e0c87f6b37a85" => :yosemite
     sha256 "9665155b0132c3fd248bb81d44204b90e8b352fb82054b238b98d7223a92abdd" => :mavericks
@@ -17,7 +16,7 @@ class Cwm < Formula
   patch do
     # Fix 10.10 build. Merged upstream.
     url "https://github.com/chneukirchen/cwm/commit/81c05b3.diff"
-    sha1 "adf1c676b693051d3c5dc964d8681eaf45b11dd7"
+    sha256 "d801f8536885bdda82f724b6b30c26af5e8967490e1c0b6419933b2341688db4"
   end
 
   def install

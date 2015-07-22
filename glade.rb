@@ -6,7 +6,6 @@ class Glade < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "80aaf99ee5c6b18037cc42e1e35799cd34fe3118e8b11eab0262a56019130d7b" => :yosemite
     sha256 "bafcb1cad85bf52bfc9a233805b9608f84681dbd2c869680ba4816b4bc12ea01" => :mavericks
     sha256 "6474119eafafd97c071e4a019bbc37234dc12b9c9178e808da8f605943b22283" => :mountain_lion

@@ -6,7 +6,6 @@ class UpnpRouterControl < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "3ceccf8fa6769da1d774259e1402e50a9c866b67782f8b1837efa3299f27f421" => :yosemite
     sha256 "75adbd8b58dccc704460e6354e7a94f43102806f54e31166702bfab7c628f444" => :mavericks
     sha256 "f5f105a0c1c85f2949431514105d56a050e671e47e9b43742276a2907d7e777e" => :mountain_lion

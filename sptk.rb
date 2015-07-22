@@ -4,7 +4,6 @@ class Sptk < Formula
   sha256 "028d6b3230bee73530f3d67d64eafa32cf23eaa987545975d260d0aaf6953f2b"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "d3aec4b0144c9393718edb8e5aa8a112083ba61433a8b35ad8ea8357d9ea7bbf" => :yosemite
     sha256 "1d1dc69333fe242e558235822b33d4bebaea0296f7963a6ae2b5b400102d03cc" => :mavericks
     sha256 "accf671e09d35e65547ebc3e8e46f2b4c1221822ea972d2dee5e57a931ac99cc" => :mountain_lion

@@ -6,7 +6,6 @@ class Sylpheed < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "b6a927472d5bd384cf91452a75dcb0557ec2abeed89e979416d21907526a601b" => :yosemite
     sha256 "8bc89499181ff389fd5df487ec24586e07e4675c046e2b4c4946fc257fe04dff" => :mavericks
     sha256 "7d8619462ea45f715347951aaec3ac6bcdb793897a625bf6a6c8ec7455fae5b5" => :mountain_lion

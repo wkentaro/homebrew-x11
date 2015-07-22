@@ -6,7 +6,6 @@ class Klavaro < Formula
   sha256 "ed71d522c29113d5d6517a65cbf95dafbe85ca4bb978139b804b98f128015e85"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     revision 1
     sha256 "ca9fadbcc99ea26944e4704496e5b4dbaba5aa9d12e189a14238aa67c348f16c" => :yosemite
     sha256 "2f6457e0d5dd320fac6ccd0e4bd0f83a685035df647db7a0353d1c10d03b2308" => :mavericks

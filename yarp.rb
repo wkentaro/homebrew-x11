@@ -6,7 +6,6 @@ class Yarp < Formula
   head "https://github.com/robotology/yarp.git"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     revision 1
     sha256 "de4e5f034538991b5184c7030f79a44cb4bd76f7d4cbd2385c9e4141ea44803a" => :yosemite
     sha256 "658267b21ae11c68b5247c8826f2cf5ad504791d16e1eeee445801294410bc92" => :mavericks

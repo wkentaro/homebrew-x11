@@ -7,7 +7,6 @@ class MitScheme < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "736068c47a7b3dd3f683be45140afc10ea1af016ea4f39bb571e71ae1d609a78" => :yosemite
     sha256 "0ba9fef9bc17b763339d9dbf9e370963db39f0655f5bfde6e05834abbce80397" => :mavericks
     sha256 "10dcb8d02d2733041092df680440f14a2654ff620bfac4fb03ca523198121263" => :mountain_lion

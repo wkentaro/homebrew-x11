@@ -5,7 +5,6 @@ class Eiffelstudio < Formula
   sha256 "3d2984bac35326e3860ee88dd7bba877b7a47e3d07b3cd6946b51a152577642c"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     cellar :any
     sha256 "a97497ae743b3df2fb4c4ae4df9813ebb34faa25221d48bf331260a3049cc55e" => :yosemite
     sha256 "79ba22b187ca6f4de2aad322695faee571cef1597fcb7162c03c57f200886ee7" => :mavericks

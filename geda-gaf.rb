@@ -6,7 +6,6 @@ class GedaGaf < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "dada3e2e03f650f40c22c380b97bf4dc718b5e9422c3205724c36c867fe44196" => :yosemite
     sha256 "dc3a0c4ab574c82c8533db37b1cd3e957bde5830be68123277d03522c222e4be" => :mavericks
     sha256 "dba0341dfb59aa2db5346069c3196e556f9421d47bea79bc0ffa1808f23d9fb0" => :mountain_lion

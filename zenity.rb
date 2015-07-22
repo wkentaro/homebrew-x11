@@ -5,7 +5,6 @@ class Zenity < Formula
   sha256 "7fe28016fbc5b1fc6d8f730d8eabd5ae2d8b7d67c8bfa0270811ff0c2bfb1eba"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "105cbdb34aaafe239277e926c7892aa636a20ccb611013c8fe662fd649286423" => :yosemite
     sha256 "12e5b7d3c268e057460a5e3656e5cb02519172e8b5fc05f1fa92457d8c29e095" => :mavericks
     sha256 "d5a679656230f98c0f642d2825a82f4cb8e912f90fe68f6c78ceef993649131c" => :mountain_lion

@@ -6,7 +6,6 @@ class Gtkwave < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     cellar :any
     sha256 "290a1022afc3578c32d924447698c5238c4e30538336eeacc2b096236f9efde7" => :yosemite
     sha256 "5cf8d5a2405987be2cd7c6e01284aba5befe7616decaf007732636bb8e30291e" => :mavericks

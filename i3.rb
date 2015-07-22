@@ -6,7 +6,6 @@ class I3 < Formula
   head "https://github.com/i3/i3.git"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "5038535280aefed22583c703f3acb059143176186d42f58a8f1713b4d7a59807" => :yosemite
     sha256 "ac30c8e39a54383384119e572734703000113e406312fd1a7f8ca56fa489b924" => :mavericks
     sha256 "c80d02dad19e0b391f88b05d747404addae95507118f6f156aba5ea0cb6e9db6" => :mountain_lion

@@ -7,7 +7,6 @@ class Pcb < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "0953f1af259dd756520288d7a961d767769f75e835d3f1e039d9b3bac893d737" => :yosemite
     sha256 "2cca7e51f52c188d862d5b90fdd3ccf189cfd743d535c028a826486bc58be420" => :mavericks
     sha256 "41cc4c897447b24f0840501456cce0b9b5a57be1d0a9dce14de2686b98528a42" => :mountain_lion

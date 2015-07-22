@@ -1,12 +1,9 @@
-require "formula"
-
 class SwiProlog < Formula
   homepage "http://www.swi-prolog.org/"
   url "http://www.swi-prolog.org/download/stable/src/swipl-7.2.2.tar.gz"
   sha256 "c137bbe1d652a6aaa003278045e592637cd9fd5f1d52b05f9f0751bfd9449c8d"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "e185ea9d2d2a9f4c8eedb306cacfa9a823a0ea2065c611dcbcb1e1e1c0788848" => :yosemite
     sha256 "15de00e8e86b82e3021edef2f457252a1ae02b57ad14eda2f6c50a650f21fbea" => :mavericks
     sha256 "b8054030907b654bc9eabf6d71331a6b85a7ed82adcc7007ee328ff9a50c863c" => :mountain_lion
@@ -23,9 +20,11 @@ class SwiProlog < Formula
     depends_on "autoconf" => :build
   end
 
-  option "lite", "Disable all packages"
+  option "with-lite", "Disable all packages"
   option "with-jpl", "Enable JPL (Java Prolog Bridge)"
   option "with-xpce", "Enable XPCE (Prolog Native GUI Library)"
+
+  deprecated_option "lite" => "with-lite"
 
   depends_on "pkg-config" => :build
   depends_on "readline"
@@ -70,7 +69,7 @@ class SwiProlog < Formula
     ENV["COFLAGS"] = ENV.cflags
 
     # Build the packages unless --lite option specified
-    args << "--with-world" unless build.include? "lite"
+    args << "--with-world" if build.without? "lite"
 
     # './prepare' prompts the user to build documentation
     # (which requires other modules). '3' is the option
@@ -78,7 +77,7 @@ class SwiProlog < Formula
     system "echo '3' | ./prepare" if build.head?
     system "./configure", *args
     system "make"
-    system "make install"
+    system "make", "install"
 
     bin.write_exec_script Dir["#{libexec}/bin/*"]
   end

@@ -5,7 +5,6 @@ class Wcm < Formula
   sha256 "f166cfd0ff8511642402892cb8eee3b20c845f82c04ca4ca940996e611aa5aba"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     revision 1
     sha256 "7a856cd42b0264ecba4b8ff9681e007772d9fd7285ac676de5b16e72d6cf1767" => :yosemite
     sha256 "2bd7a1f210599a68e55563c2ff4fcc64e942878b8695a5cfe957b8958680effc" => :mavericks

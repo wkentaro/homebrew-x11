@@ -5,7 +5,6 @@ class Rdesktop < Formula
   sha256 "88b20156b34eff5f1b453f7c724e0a3ff9370a599e69c01dc2bf0b5e650eece4"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "a6fe9d0323bbdc6db424f056b1cf20df23c35a1d4f15ab52c1b0eb30e19287e7" => :yosemite
     sha256 "fdfac37d70b9e750de33be617345d0d7226bcc764e8a3fbd16cc2ef8e0fc8731" => :mavericks
     sha256 "162ad10246d51275699969b449aa09e30aaa852c7892331970bccc587f5a2163" => :mountain_lion

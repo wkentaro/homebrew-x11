@@ -8,7 +8,6 @@ class Pgplot < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     revision 1
     sha256 "edee06a049593b59c674b7a509ab797958950813d9d5809d8fde49c02bcf024e" => :yosemite
     sha256 "23fa9dbad25ab32e27001f0da418023240511d5192f5712615505ae4705d410c" => :mavericks
@@ -84,7 +83,7 @@ class Pgplot < Formula
       cp "../drivers.list", "."
       ["GIF", "VGIF", "LATEX", "PNG", "TPNG", "PS",
        "VPS", "CPS", "VCPS", "XWINDOW", "XSERVE"].each do |drv|
-        inreplace "drivers.list", /^! (.*\/#{drv} .*)/, '  \1'
+        inreplace "drivers.list", %r{^! (.*\/#{drv} .*)}, '  \1'
       end
 
       # make everything

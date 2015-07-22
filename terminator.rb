@@ -5,7 +5,6 @@ class Terminator < Formula
   sha256 "9131847023fa22f11cf812f6ceff51b5d66d140b6518ad41d7fa8b0742bfd3f7"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     cellar :any
     sha256 "362a964719cda836191ff3798dd6da4cf9578c91bf27e5213e36c4d2ea9671b9" => :yosemite
     sha256 "a8847d9a30574c788627f36b8d266bc063d2b9078722b25bd705211d8c7f230e" => :mavericks

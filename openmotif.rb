@@ -5,7 +5,6 @@ class Openmotif < Formula
   sha256 "637efa09608e0b8f93465dbeb7c92e58ebb14c4bc1b488040eb79a65af3efbe0"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "2815e098cf644cd74e421f8ab98abe28575399a6bd5df86de1db4ef8464befa3" => :yosemite
     sha256 "c6f95906e50ead63eab05702aa28fd0ad303597aac205e81778df737f65f6110" => :mavericks
     sha256 "595baa6d82cb4d62647933674efa03a51219a65ad411a9493cd864d0ffa3d0d2" => :mountain_lion

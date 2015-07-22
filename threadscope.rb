@@ -8,7 +8,6 @@ class Threadscope < Formula
   sha256 "cc5653831252d55b3ba7506ea648e770b2c4489cdf4d78828f07dc24ea7ffdb6"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "c6852b8d87b9e0004cf94e92a3b19faa35c142f6224b50ed42f282685c4a22d8" => :yosemite
     sha256 "8b430ceeb2b07d4d9442b607537d8ad4bc51ffe06611db25b1c210bed93becb0" => :mavericks
     sha256 "ba0ed2c9b22c9ed5baef6516d0569d21201d529142075eeba0e0ce20968592ec" => :mountain_lion

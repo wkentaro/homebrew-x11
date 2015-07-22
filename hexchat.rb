@@ -7,7 +7,6 @@ class Hexchat < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "8174fb0b86a0ddae554466f340a9630a9b2f8a0efaa7e27022a79e925bbbd900" => :yosemite
     sha256 "ea151435ade5c89a9b2d6da41439bb5727a7cdc146eafc6f77d2630c5cb18b81" => :mavericks
     sha256 "32dc2cd7b2bf1e96122aeacd84d44b4bae162ecaa9521b601ee2da7de08bcbe8" => :mountain_lion

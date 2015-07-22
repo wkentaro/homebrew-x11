@@ -8,7 +8,6 @@ class Gobby < Formula
   head "git://git.0x539.de/git/gobby.git"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "82f4008ddd4d54f1ad79a11490ad86e59ffc29aab209119c120ec8416f895e26" => :yosemite
     sha256 "65f91501dcadab0d3c8df6659781a9d44e07565afeec56114fcf78cea0cc0291" => :mavericks
     sha256 "5327d1640f65a713b97e104b19b70080534f3975dc30ae78db14b29fee8f972e" => :mountain_lion

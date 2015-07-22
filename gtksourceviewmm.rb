@@ -6,7 +6,6 @@ class Gtksourceviewmm < Formula
   revision 1
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-x11"
     sha256 "3d8566e86cece40dc4a6b04c2c98918d536b9e4cc7afa77a97b607488913e02c" => :yosemite
     sha256 "f66ec2e03070338f44ec5af6c43376e81631e47d423f38dd2e5eb3c188b4cb36" => :mavericks
     sha256 "255b390316e7ea0ac7d8ca391b2825d83762f0a17ec323d87895b1742dcd3503" => :mountain_lion
