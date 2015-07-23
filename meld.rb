@@ -1,9 +1,8 @@
 class Meld < Formula
   desc "A visual diff tool for developers"
   homepage "http://meldmerge.org"
-  url "https://download.gnome.org/sources/meld/3.12/meld-3.12.3.tar.xz"
-  sha256 "db3572c5c6905b09f4fc28415a7f6f223014391492dd2165ed1bc8512ac4e6fd"
-  revision 1
+  url "https://download.gnome.org/sources/meld/3.14/meld-3.14.0.tar.xz"
+  sha256 "430e2936b787c90ffa0999d3c94611fcaa64ca1920933f31550d5b931b4f103c"
 
   bottle do
     sha256 "be8062951844b1d73a550b886e7fc09318f4b7bc4024c259241753aa1cf0c04a" => :yosemite
