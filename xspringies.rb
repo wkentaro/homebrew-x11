@@ -4,7 +4,6 @@ class Xspringies < Formula
   sha1 "7898352b444f7eca8ad90a609330935b7eafa1c2"
 
   bottle do
-    root_url "https://downloads.sf.net/project/machomebrew/Bottles/x11"
     sha1 "42c98753f4430639d961128d450c9d1ba01124a0" => :yosemite
     sha1 "7a791f236b5738a666523d091686a015152677fb" => :mavericks
     sha1 "23817a7161135c3a368d91e027133911802424a8" => :mountain_lion
