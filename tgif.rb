@@ -4,6 +4,12 @@ class Tgif < Formula
   url "https://downloads.sourceforge.net/project/tgif/tgif/4.2.5/tgif-QPL-4.2.5.tar.gz"
   sha256 "2f24e9fecafae6e671739bd80691a06c9d032bdd1973ca164823e72ab1c567ba"
 
+  bottle do
+    sha256 "2bcc1708851a414abdd8a78cc5780fcba3635ab8394ed774a1cb5d1e8143db3a" => :yosemite
+    sha256 "c4d4d9c6787b8fce6ced35211dec053ce6358e9acfca9cc656c423584ce97787" => :mavericks
+    sha256 "932da9ea1f01c0ed87b723b428011486d1bfcca6a4930fa1bd2d5babf18e5142" => :mountain_lion
+  end
+
   depends_on :x11
 
   def install
