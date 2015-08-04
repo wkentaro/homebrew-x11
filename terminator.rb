@@ -1,7 +1,7 @@
 class Terminator < Formula
   desc "Multiple terminals in one window"
   homepage "http://gnometerminator.blogspot.co.uk/p/introduction.html"
-  url "http://launchpad.net/terminator/trunk/0.97/+download/terminator-0.97.tar.gz"
+  url "https://launchpad.net/terminator/trunk/0.97/+download/terminator-0.97.tar.gz"
   sha256 "9131847023fa22f11cf812f6ceff51b5d66d140b6518ad41d7fa8b0742bfd3f7"
 
   bottle do
@@ -13,7 +13,7 @@ class Terminator < Formula
 
   depends_on "pkg-config" => :build
   depends_on "intltool" => :build
-  depends_on :python
+  depends_on :python if MacOS.version <= :snow_leopard
   depends_on "vte"
   depends_on "pygtk"
   depends_on "pygobject"
@@ -24,10 +24,13 @@ class Terminator < Formula
   patch :DATA
 
   def install
-    ENV["PYTHONPATH"] = lib+"python2.7/site-packages"
-    ENV.prepend_create_path "PYTHONPATH", HOMEBREW_PREFIX+"lib/python2.7/site-packages"
-    system "python", "setup.py", "install", "--prefix=#{prefix}"
-    bin.env_script_all_files(libexec+"bin", :PYTHONPATH => ENV["PYTHONPATH"])
+    ENV.prepend_create_path "PYTHONPATH", lib/"python2.7/site-packages"
+    system "python", *Language::Python.setup_install_args(prefix)
+  end
+
+  def post_install
+    system "#{Formula["gtk"].opt_bin}/gtk-update-icon-cache", "-f",
+           "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
   end
 
   test do
