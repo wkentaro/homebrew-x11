@@ -1,10 +1,8 @@
-require 'formula'
-
 class Giblib < Formula
-  homepage 'http://freshmeat.net/projects/giblib'
-  url 'http://linuxbrit.co.uk/downloads/giblib-1.2.4.tar.gz'
-  mirror 'http://www.mirrorservice.org/sites/distfiles.macports.org/giblib/giblib-1.2.4.tar.gz'
-  sha1 '342e6f7882c67d2277e1765299e1be5078329ab0'
+  homepage "http://freshmeat.net/projects/giblib"
+  url "http://linuxbrit.co.uk/downloads/giblib-1.2.4.tar.gz"
+  mirror "http://www.mirrorservice.org/sites/distfiles.macports.org/giblib/giblib-1.2.4.tar.gz"
+  sha256 "176611c4d88d742ea4013991ad54c2f9d2feefbc97a28434c0f48922ebaa8bac"
 
   bottle do
     cellar :any
@@ -15,11 +13,11 @@ class Giblib < Formula
   end
 
   depends_on :x11
-  depends_on 'imlib2' => :build
+  depends_on "imlib2" => :build
 
   def install
     system "./configure", "--prefix=#{prefix}"
-    system "make install"
+    system "make", "install"
   end
 
   test do

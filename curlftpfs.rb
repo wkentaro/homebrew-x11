@@ -1,11 +1,9 @@
-require 'formula'
-
 class Curlftpfs < Formula
-  homepage 'http://curlftpfs.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/curlftpfs/curlftpfs/0.9.2/curlftpfs-0.9.2.tar.gz'
-  sha1 '83f148afe6bd4d44c9790790f1c30986c8b9ea56'
+  homepage "http://curlftpfs.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/curlftpfs/curlftpfs/0.9.2/curlftpfs-0.9.2.tar.gz"
+  sha256 "4eb44739c7078ba0edde177bdd266c4cfb7c621075f47f64c85a06b12b3c6958"
 
-  head 'https://github.com/rfw/curlftpfs.git'
+  head "https://github.com/rfw/curlftpfs.git"
 
   depends_on "pkg-config" => :build
   depends_on "autoconf" => :build
@@ -20,6 +18,6 @@ class Curlftpfs < Formula
     system "autoreconf", "-fvi"
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
-    system "make install"
+    system "make", "install"
   end
 end

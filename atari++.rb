@@ -1,14 +1,12 @@
-require 'formula'
-
 class Atarixx < Formula
-  homepage 'http://www.xl-project.com'
-  url 'http://www.xl-project.com/download/atari++_1.72.tar.gz'
-  sha1 '64e31389032292cd4a82a972e83bb2b3ee723068'
+  homepage "http://www.xl-project.com"
+  url "http://www.xl-project.com/download/atari++_1.72.tar.gz"
+  sha256 "66c530896f87f53e0a450f9e0c659a4f01045177f6a81d8abb2f5bb42733dc48"
 
-  option 'with-curses'
+  option "with-curses"
 
   depends_on :x11
-  depends_on 'sdl' => :recommended
+  depends_on "sdl" => :recommended
 
   def install
     args = ["--prefix=#{prefix}"]
@@ -17,6 +15,6 @@ class Atarixx < Formula
 
     system "./configure", *args
     system "make"
-    system "make install"
+    system "make", "install"
   end
 end

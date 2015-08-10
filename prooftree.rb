@@ -1,9 +1,7 @@
-require 'formula'
-
 class Prooftree < Formula
-  homepage 'http://askra.de/software/prooftree'
-  url 'http://askra.de/software/prooftree/releases/prooftree-0.10.tar.gz'
-  sha1 'ac9ba265062382109673320635d822f92e6a126c'
+  homepage "http://askra.de/software/prooftree"
+  url "http://askra.de/software/prooftree/releases/prooftree-0.10.tar.gz"
+  sha256 "12758cd6bda2ccea24ffcd9d19d4ef6b06a9e26f71cec090c3088734adecb7ac"
 
   bottle do
     cellar :any
@@ -13,11 +11,11 @@ class Prooftree < Formula
   end
 
   depends_on :x11
-  depends_on 'lablgtk'
+  depends_on "lablgtk"
 
   def install
     system "./configure", "--prefix", prefix
     system "make"
-    system "make install"
+    system "make", "install"
   end
 end

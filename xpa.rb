@@ -1,9 +1,7 @@
-require 'formula'
-
 class Xpa < Formula
-  homepage 'http://hea-www.harvard.edu/RD/xpa/'
-  url 'http://hea-www.harvard.edu/saord/download/xpa/xpa-2.1.15.tar.gz'
-  sha1 'fe9df55606b663fbe01023fcd44a9c18bc7c6ad5'
+  homepage "http://hea-www.harvard.edu/RD/xpa/"
+  url "http://hea-www.harvard.edu/saord/download/xpa/xpa-2.1.15.tar.gz"
+  sha256 "ac0e041f9115757fbcbfeb377cb5833544815a70f2b46f6edfbf6d1239ae690a"
 
   depends_on :x11
 
@@ -11,7 +9,7 @@ class Xpa < Formula
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
-    system "make install"
+    system "make", "install"
 
     # relocate man, since --mandir is ignored
     mv "#{prefix}/man", man

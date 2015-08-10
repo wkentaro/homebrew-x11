@@ -1,9 +1,7 @@
-require "formula"
-
 class X3270 < Formula
   homepage "http://x3270.bgp.nu/"
   url "https://downloads.sourceforge.net/project/x3270/x3270/3.3.15ga8/suite3270-3.3.15ga8-src.tgz"
-  sha1 "c53d4cb7bd961f4114539495c46ffdab45303f77"
+  sha256 "85a29af6ba6cf77dc0d0dc47bf31bcaec35aff57c529924b632b3c5332a555ce"
 
   bottle do
     sha1 "bc56bef330ed5179723cb3cda669492b89b8a705" => :yosemite
@@ -23,7 +21,7 @@ class X3270 < Formula
     cd directory do
       system "./configure", "--prefix=#{prefix}"
       system "make"
-      system "make install"
+      system "make", "install"
       system "make install.man"
     end
   end

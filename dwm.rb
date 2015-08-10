@@ -1,9 +1,7 @@
-require 'formula'
-
 class Dwm < Formula
-  homepage 'http://dwm.suckless.org/'
-  url 'http://dl.suckless.org/dwm/dwm-6.0.tar.gz'
-  sha1 '35346f873a27f219ae266594b3690407f95d06ef'
+  homepage "http://dwm.suckless.org/"
+  url "http://dl.suckless.org/dwm/dwm-6.0.tar.gz"
+  sha256 "b2b9483de69259eeea56844899bb2385158d3e79a42d82b10c142099fc8eeb56"
 
   bottle do
     cellar :any
@@ -12,18 +10,18 @@ class Dwm < Formula
     sha1 "29c1feef59b6c7da94b096a9452a1e402037fba3" => :lion
   end
 
-  head 'http://git.suckless.org/dwm', :using => :git
+  head "http://git.suckless.org/dwm", :using => :git
 
   depends_on :x11
-  depends_on 'dmenu' => :optional
+  depends_on "dmenu" => :optional
 
   def install
     # The dwm default quit keybinding Mod1-Shift-q collides with
     # the Mac OS X Log Out shortcut in the Apple menu.
-    inreplace 'config.def.h',
-    '{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },',
-    '{ MODKEY|ControlMask,           XK_q,      quit,           {0} },'
-    inreplace 'dwm.1', '.B Mod1\-Shift\-q', '.B Mod1\-Control\-q'
+    inreplace "config.def.h",
+    "{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },",
+    "{ MODKEY|ControlMask,           XK_q,      quit,           {0} },"
+    inreplace "dwm.1", '.B Mod1\-Shift\-q', '.B Mod1\-Control\-q'
     system "make", "PREFIX=#{prefix}", "install"
   end
 

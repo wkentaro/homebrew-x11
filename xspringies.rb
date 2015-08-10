@@ -1,7 +1,7 @@
 class Xspringies < Formula
   homepage "http://www.cs.rutgers.edu/~decarlo/software.html"
   url "http://www.cs.rutgers.edu/~decarlo/software/xspringies-1.12.tar.Z"
-  sha1 "7898352b444f7eca8ad90a609330935b7eafa1c2"
+  sha256 "08a3e9f60d1f1e15d38d62dd62baab18f6ad57ee139b0ef41452be66e4ad6a28"
 
   bottle do
     sha1 "42c98753f4430639d961128d450c9d1ba01124a0" => :yosemite

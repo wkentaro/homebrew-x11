@@ -1,9 +1,7 @@
-require 'formula'
-
 class Tabbed < Formula
-  homepage 'http://tools.suckless.org/tabbed'
-  url 'http://dl.suckless.org/tools/tabbed-0.6.tar.gz'
-  sha1 '3c64d79817337f86f0cdd60b5b79af7e77d4a5f9'
+  homepage "http://tools.suckless.org/tabbed"
+  url "http://dl.suckless.org/tools/tabbed-0.6.tar.gz"
+  sha256 "7651ea3acbec5d6a25469e8665da7fc70aba2b4fa61a2a6a5449eafdfd641c42"
 
   bottle do
     cellar :any
@@ -12,12 +10,12 @@ class Tabbed < Formula
     sha1 "823a4e327e626120283262116f15ee47cd0a3f6a" => :lion
   end
 
-  head 'http://git.suckless.org/tabbed', :using => :git
+  head "http://git.suckless.org/tabbed", :using => :git
 
   depends_on :x11
 
   def install
-    inreplace 'config.mk', "LIBS = -L/usr/lib -lc -lX11", "LIBS = -L#{MacOS::X11.lib} -lc -lX11"
+    inreplace "config.mk", "LIBS = -L/usr/lib -lc -lX11", "LIBS = -L#{MacOS::X11.lib} -lc -lX11"
     system "make", "PREFIX=#{prefix}", "install"
   end
 end

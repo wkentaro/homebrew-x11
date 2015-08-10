@@ -1,10 +1,8 @@
-require "formula"
-
 class Hatari < Formula
   homepage "http://hatari.tuxfamily.org"
   head "http://hg.tuxfamily.org/mercurialroot/hatari/hatari", :using => :hg, :branch => "default"
   url "http://download.tuxfamily.org/hatari/1.8.0/hatari-1.8.0.tar.bz2"
-  sha1 "08d950c3156c764b87ac0ae03c4f350febff9567"
+  sha256 "7ecf486ba578e3b4d7a3d3e86ef3e879d5e5611b39c2504e38ccafdaacb5ffeb"
 
   depends_on :x11
   depends_on "cmake" => :build

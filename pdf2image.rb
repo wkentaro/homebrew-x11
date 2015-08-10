@@ -1,16 +1,14 @@
-require 'formula'
-
 class Pdf2image < Formula
-  homepage 'http://code.google.com/p/pdf2image/'
-  url 'https://pdf2image.googlecode.com/files/pdf2image-0.53-source.tar.gz'
-  sha1 '2acc8d1597eb470fce761d3f35b548318d446c2a'
+  homepage "https://code.google.com/p/pdf2image/"
+  url "https://pdf2image.googlecode.com/files/pdf2image-0.53-source.tar.gz"
+  sha256 "e8672c3bdba118c83033c655d90311db003557869c92903e5012cdb368a68982"
 
   depends_on :x11
-  depends_on 'freetype'
-  depends_on 'ghostscript'
+  depends_on "freetype"
+  depends_on "ghostscript"
 
-  conflicts_with 'poppler', 'xpdf',
-    :because => 'pdf2image, poppler, and xpdf install conflicting executables'
+  conflicts_with "poppler", "xpdf",
+    :because => "pdf2image, poppler, and xpdf install conflicting executables"
 
   def install
     system "./configure", "--prefix=#{prefix}"
@@ -27,6 +25,6 @@ class Pdf2image < Formula
       "LDFLAGS =", "LDFLAGS=-L#{MacOS::X11.lib}"
 
     system "make"
-    system "make install"
+    system "make", "install"
   end
 end

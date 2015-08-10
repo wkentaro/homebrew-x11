@@ -1,18 +1,16 @@
-require 'formula'
-
 class TransmissionRemoteGtk < Formula
-  homepage 'http://code.google.com/p/transmission-remote-gtk/'
-  url 'https://transmission-remote-gtk.googlecode.com/files/transmission-remote-gtk-1.1.1.tar.gz'
-  sha1 '2fdfe0526a64a2ee5f24f1c31ca55771ea00ac7b'
+  homepage "https://code.google.com/p/transmission-remote-gtk/"
+  url "https://transmission-remote-gtk.googlecode.com/files/transmission-remote-gtk-1.1.1.tar.gz"
+  sha256 "9f5ac2de623d633bcaacb6362bb6d8fb468c6dff278b867f65809c48ea1570c9"
 
   depends_on :x11
-  depends_on 'intltool' => :build
-  depends_on 'pkg-config' => :build
-  depends_on 'gtk+3'
-  depends_on 'json-glib'
+  depends_on "intltool" => :build
+  depends_on "pkg-config" => :build
+  depends_on "gtk+3"
+  depends_on "json-glib"
 
   def install
     system "./configure", "--prefix=#{prefix}", "--enable-gtk3"
-    system "make install"
+    system "make", "install"
   end
 end

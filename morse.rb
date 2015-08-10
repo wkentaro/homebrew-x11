@@ -1,9 +1,7 @@
-require 'formula'
-
 class Morse < Formula
-  homepage 'http://www.catb.org/~esr/morse/'
-  url 'http://www.catb.org/~esr/morse/morse-2.5.tar.gz'
-  sha1 'f3b607272e5dc84920e4d3a80d559df0e92ec54b'
+  homepage "http://www.catb.org/~esr/morse/"
+  url "http://www.catb.org/~esr/morse/morse-2.5.tar.gz"
+  sha256 "476d1e8e95bb173b1aadc755db18f7e7a73eda35426944e1abd57c20307d4987"
 
   depends_on :x11
 

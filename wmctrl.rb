@@ -1,13 +1,11 @@
-require 'formula'
-
 class Wmctrl < Formula
-  homepage 'http://sweb.cz/tripie/utils/wmctrl/'
-  url 'https://sites.google.com/site/tstyblo/wmctrl/wmctrl-1.07.tar.gz'
-  sha1 'a123019a7fd5adc3e393fc1108cb706268a34e4d'
+  homepage "http://sweb.cz/tripie/utils/wmctrl/"
+  url "https://sites.google.com/site/tstyblo/wmctrl/wmctrl-1.07.tar.gz"
+  sha256 "d78a1efdb62f18674298ad039c5cbdb1edb6e8e149bb3a8e3a01a4750aa3cca9"
 
-  depends_on 'pkg-config' => :build
-  depends_on 'glib'
-  depends_on 'gettext'
+  depends_on "pkg-config" => :build
+  depends_on "glib"
+  depends_on "gettext"
   depends_on :x11
 
   # Fix for 64-bit arch. See:
@@ -18,7 +16,7 @@ class Wmctrl < Formula
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
-    system "make install"
+    system "make", "install"
   end
 end
 

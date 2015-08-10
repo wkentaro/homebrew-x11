@@ -5,7 +5,7 @@ class Xdu < Formula
   homepage "https://packages.debian.org/source/unstable/xdu"
   url "https://mirrors.kernel.org/debian/pool/main/x/xdu/xdu_3.0.orig.tar.gz"
   mirror "http://archive.ubuntu.com/ubuntu/pool/universe/x/xdu/xdu_3.0.orig.tar.gz"
-  sha1 "960b9bdf81782d78be8d9e19908546e9acc07dcd"
+  sha256 "42c018597e31fade56e44b21ed7041f23756532df6e114b5475b4a50cd4df881"
 
   depends_on :x11
 

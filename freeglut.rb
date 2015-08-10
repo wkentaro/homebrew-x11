@@ -1,13 +1,11 @@
-require 'formula'
-
 class Freeglut < Formula
-  homepage 'http://freeglut.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/freeglut/freeglut/2.8.1/freeglut-2.8.1.tar.gz'
-  sha1 '7330b622481e2226c0c9f6d2e72febe96b03f9c4'
+  homepage "http://freeglut.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/freeglut/freeglut/2.8.1/freeglut-2.8.1.tar.gz"
+  sha256 "dde46626a62a1cd9cf48a11951cdd592e7067c345cffe193a149dfd47aef999a"
 
   # Examples won't build on Snow Leopard as one of them requires
   # a header the system provided X11 doesn't have.
-  option 'with-examples', "Build the examples."
+  option "with-examples", "Build the examples."
   option :universal
 
   depends_on :x11
@@ -20,14 +18,14 @@ class Freeglut < Formula
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
 
-    if build.without?('examples') || MacOS.version < :lion
-      inreplace 'Makefile' do |s|
-        s.change_make_var! 'SUBDIRS', 'src include doc'
+    if build.without?("examples") || MacOS.version < :lion
+      inreplace "Makefile" do |s|
+        s.change_make_var! "SUBDIRS", "src include doc"
       end
     end
 
-    system "make all"
-    system "make install"
+    system "make", "all"
+    system "make", "install"
   end
 end
 

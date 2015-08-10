@@ -1,9 +1,7 @@
-require "formula"
-
 class Iptux < Formula
   homepage "https://github.com/iptux-src/iptux"
   url "https://github.com/iptux-src/iptux/archive/v0.6.2.tar.gz"
-  sha1 "19c3984d7523f8563d91a2949b6fb0629ab6c586"
+  sha256 "d567096d97b3b168dde1510f0ca00a13c6f8bb596131c234482377d7d8fb211b"
 
   depends_on :x11
   depends_on "gettext"
