@@ -1,8 +1,8 @@
 class I3 < Formula
   desc "Tiling window manager"
   homepage "http://i3wm.org/"
-  url "http://i3wm.org/downloads/i3-4.10.2.tar.bz2"
-  sha256 "0795a31b47f93b637da7f7e65197568117f46a35c745f4de4f56e7b2efcccfd8"
+  url "http://i3wm.org/downloads/i3-4.10.3.tar.bz2"
+  sha256 "9290857bd5a4d1a792544d763bedd53104a683f3e721b5631811827a388107d3"
   head "https://github.com/i3/i3.git"
 
   bottle do
@@ -13,7 +13,7 @@ class I3 < Formula
 
   depends_on "asciidoc" => :build
   depends_on "pkg-config" => :build
-  depends_on "cairo"
+  depends_on "cairo" => ["with-x11"]
   depends_on "gettext"
   depends_on "libev"
   depends_on "pango"
