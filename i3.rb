@@ -6,9 +6,9 @@ class I3 < Formula
   head "https://github.com/i3/i3.git"
 
   bottle do
-    sha256 "5038535280aefed22583c703f3acb059143176186d42f58a8f1713b4d7a59807" => :yosemite
-    sha256 "ac30c8e39a54383384119e572734703000113e406312fd1a7f8ca56fa489b924" => :mavericks
-    sha256 "c80d02dad19e0b391f88b05d747404addae95507118f6f156aba5ea0cb6e9db6" => :mountain_lion
+    sha256 "34c0231d90b89dd1f2a43f12289226e14c15a88f45f860986773a94f9f5566ad" => :yosemite
+    sha256 "8254be976fa8a5f3e5dc0d041d3f81cf9e750299e636a3aaa947d13811fde7ae" => :mavericks
+    sha256 "a91d897fc0387b6484d17dff360f8427cdd6b98383a308056efeb615f0663788" => :mountain_lion
   end
 
   depends_on "asciidoc" => :build
