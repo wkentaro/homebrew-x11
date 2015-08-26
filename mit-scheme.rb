@@ -14,6 +14,10 @@ class MitScheme < Formula
 
   conflicts_with "tinyscheme", :because => "both install a `scheme` binary"
 
+  # Has a hardcoded compile check for /Applications/Xcode.app
+  # Dies on "configure: error: SIZEOF_CHAR is not 1" without Xcode.
+  # https://github.com/Homebrew/homebrew-x11/issues/103#issuecomment-125014423
+  depends_on :xcode => :build
   depends_on "openssl"
   depends_on :x11 => :recommended
 
