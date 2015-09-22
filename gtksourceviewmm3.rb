@@ -1,8 +1,8 @@
 class Gtksourceviewmm3 < Formula
   desc "C++ bindings for gtksourceview3"
   homepage "https://developer.gnome.org/gtksourceviewmm/"
-  url "https://download.gnome.org/sources/gtksourceviewmm/3.12/gtksourceviewmm-3.12.0.tar.xz"
-  sha256 "73939031bcc60e6ad31a315ec84b132deba15e5732de16e75fe424a619267ace"
+  url "https://download.gnome.org/sources/gtksourceviewmm/3.18/gtksourceviewmm-3.18.0.tar.xz"
+  sha256 "51081ae3d37975dae33d3f6a40621d85cb68f4b36ae3835eec1513482aacfb39"
 
   bottle do
     sha256 "20127c394b0118cce2dc118283dbeeca991538a98133ec53fcab0e70dddc1393" => :yosemite
@@ -14,7 +14,10 @@ class Gtksourceviewmm3 < Formula
   depends_on "pkg-config" => :build
   depends_on "gtkmm3"
 
+  needs :cxx11
+
   def install
+    ENV.cxx11
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
   end
@@ -121,7 +124,7 @@ class Gtksourceviewmm3 < Formula
       -lpangomm-1.4
       -lsigc-2.0
     ]
-    system ENV.cxx, "test.cpp", "-o", "test", *flags
+    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
     system "./test"
   end
 end
