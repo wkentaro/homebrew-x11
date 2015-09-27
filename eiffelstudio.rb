@@ -6,9 +6,9 @@ class Eiffelstudio < Formula
 
   bottle do
     cellar :any
-    sha256 "a97497ae743b3df2fb4c4ae4df9813ebb34faa25221d48bf331260a3049cc55e" => :yosemite
-    sha256 "79ba22b187ca6f4de2aad322695faee571cef1597fcb7162c03c57f200886ee7" => :mavericks
-    sha256 "59f369e3029170d8cb7bff581540de8aa3954674dd8bfaad09303b39596ef427" => :mountain_lion
+    sha256 "ed133a225ca5d720b23b1fd5c99e3c8ab25f5f5179f3d0e81fb06f5519bec81c" => :el_capitan
+    sha256 "d95f580ea3793c39f8bde5a4b83dddbcc345010c326cfa3f6d634dae6f4e8418" => :yosemite
+    sha256 "dd08958609415321088bc6c5154f15e107a1fc83ec66d23df78173c2a5c4a8d6" => :mavericks
   end
 
   depends_on "pkg-config" => :build
