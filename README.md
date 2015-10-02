@@ -1,7 +1,7 @@
 # Homebrew X11
 This tap provides formulae with hard dependencies on X11 (which has not been shipped with OS X since 10.7).
 
-To install these you will need to have XQuartz installed with `brew install Caskroom/cask/xquartz` or from http://xquartz.macosforge.org.
+To install these you will need to have XQuartz installed with `brew install Caskroom/cask/xquartz` or from https://xquartz.macosforge.org/.
 
 ## How do I install these formulae?
 `brew install homebrew/x11/<formula>`
