@@ -4,7 +4,7 @@ class Inkscape < Formula
   url "https://inkscape.org/en/gallery/item/3854/inkscape-0.91.tar.gz"
   mirror "https://mirrors.kernel.org/debian/pool/main/i/inkscape/inkscape_0.91.orig.tar.gz"
   sha256 "2ca3cfbc8db53e4a4f20650bf50c7ce692a88dcbf41ebc0c92cd24e46500db20"
-  revision 2
+  revision 3
 
   bottle do
     sha256 "b8178793aea18bcd80aa660949a8fd6e8e13f9668b93973f15a8ab3ffe9caea6" => :yosemite
@@ -35,16 +35,16 @@ class Inkscape < Formula
   depends_on "pango"
   depends_on "popt"
 
+  needs :cxx11
+
   if MacOS.version < :mavericks
     fails_with :clang do
       cause "inkscape's dependencies will be built with libstdc++ and fail to link."
     end
   end
 
-  needs :cxx11 if MacOS.version >= :mavericks
-
   def install
-    ENV.cxx11 if MacOS.version >= :mavericks
+    ENV.cxx11
     ENV.append "LDFLAGS", "-liconv"
 
     args = %W[

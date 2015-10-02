@@ -3,7 +3,7 @@ class Gsmartcontrol < Formula
   homepage "http://gsmartcontrol.sourceforge.net/home/index.php"
   url "https://downloads.sourceforge.net/project/gsmartcontrol/0.8.7/gsmartcontrol-0.8.7.tar.bz2"
   sha256 "708fa803243abb852ed52050fc82cd3592a798c02743342441996e77f19ffec6"
-  revision 1
+  revision 2
 
   bottle do
     sha256 "655cb81fca643ef4e8f0a049f528a03418f1592c78d3a190e5225dffb4ba6860" => :yosemite
@@ -16,11 +16,14 @@ class Gsmartcontrol < Formula
   depends_on "gtkmm"
   depends_on "pcre"
 
+  needs :cxx11
+
   # Fix bad includes with gtkmm-2.24.3
   # Check if this is still needed with new versions of gsmartcontrol and gtkmm
   patch :DATA
 
   def install
+    ENV.cxx11
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make"

@@ -3,7 +3,7 @@ class Gtksourceviewmm < Formula
   homepage "https://developer.gnome.org/gtksourceviewmm/"
   url "https://download.gnome.org/sources/gtksourceviewmm/2.10/gtksourceviewmm-2.10.3.tar.xz"
   sha256 "0000df1b582d7be2e412020c5d748f21c0e6e5074c6b2ca8529985e70479375b"
-  revision 1
+  revision 2
 
   bottle do
     sha256 "3d8566e86cece40dc4a6b04c2c98918d536b9e4cc7afa77a97b607488913e02c" => :yosemite
@@ -15,7 +15,10 @@ class Gtksourceviewmm < Formula
   depends_on "pkg-config" => :build
   depends_on "gtkmm"
 
+  needs :cxx11
+
   def install
+    ENV.cxx11
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
   end
@@ -120,7 +123,7 @@ class Gtksourceviewmm < Formula
       -lpangomm-1.4
       -lsigc-2.0
     ]
-    system ENV.cxx, "test.cpp", "-o", "test", *flags
+    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
     system "./test"
   end
 end
