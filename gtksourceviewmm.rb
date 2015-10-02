@@ -6,9 +6,10 @@ class Gtksourceviewmm < Formula
   revision 2
 
   bottle do
-    sha256 "3d8566e86cece40dc4a6b04c2c98918d536b9e4cc7afa77a97b607488913e02c" => :yosemite
-    sha256 "f66ec2e03070338f44ec5af6c43376e81631e47d423f38dd2e5eb3c188b4cb36" => :mavericks
-    sha256 "255b390316e7ea0ac7d8ca391b2825d83762f0a17ec323d87895b1742dcd3503" => :mountain_lion
+    cellar :any
+    sha256 "3f8b3676b7432e7d81fbcc732230b8d039eed8d775089175ad3f202443a32582" => :el_capitan
+    sha256 "dc10b1e822c7ed5bfbb8d9f56ff24535ea0fda6ffd340f91f5ec669c1fbe1012" => :yosemite
+    sha256 "e115f182d9ea58c4801652d59f441dbf16b6f138e18b8122894ec285021296c3" => :mavericks
   end
 
   depends_on "gtksourceview"
