@@ -1,8 +1,8 @@
 class Meld < Formula
   desc "A visual diff tool for developers"
   homepage "http://meldmerge.org"
-  url "https://download.gnome.org/sources/meld/3.14/meld-3.14.0.tar.xz"
-  sha256 "430e2936b787c90ffa0999d3c94611fcaa64ca1920933f31550d5b931b4f103c"
+  url "https://download.gnome.org/sources/meld/3.14/meld-3.14.1.tar.xz"
+  sha256 "f43f750ed00da7925ecc70d6c5fc398c46ccf5af2f9e14b42c9a8afc7fbc06a3"
 
   bottle do
     cellar :any
