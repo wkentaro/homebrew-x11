@@ -13,10 +13,10 @@ class Terminator < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "db25b36de9844473fddd6afa620fc5a4719fd5908e1c6afa74a6b792f6b88985" => :yosemite
-    sha256 "16fae780f572189db5b84d86a89c22260e5aa456e7a1941ebb8331aa2bfb1c33" => :mavericks
-    sha256 "b0c6d46bc9088520cd271b0e35aad958a6ef4c792fa404a9fbf52d3e3d52de6e" => :mountain_lion
+    cellar :any_skip_relocation
+    sha256 "f6da6d12c1b57c53936cb64d467fe70c509686e5393226216087a57c527de3d3" => :el_capitan
+    sha256 "49b91589167893425ea2c7bdf700d9e6f47e72b7caacc2a4c06bab6d61d0760d" => :yosemite
+    sha256 "7c6d3f693ee50ba43106f04fe746d6364404ce30b0fe73f8bedb12eeec254133" => :mavericks
   end
 
   depends_on "pkg-config" => :build
