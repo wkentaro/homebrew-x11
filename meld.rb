@@ -5,10 +5,10 @@ class Meld < Formula
   sha256 "f43f750ed00da7925ecc70d6c5fc398c46ccf5af2f9e14b42c9a8afc7fbc06a3"
 
   bottle do
-    cellar :any
-    sha256 "c63bd4dad5ea7b550937c9a021f8a982ee9a3753148d068d9a047871cc370654" => :yosemite
-    sha256 "b494dcc6052d1c57171c1aa42593b016be4eca58899992224efe23cb398333b0" => :mavericks
-    sha256 "9be56dc3d6220c0af3cdcd70be3ca9cdb315ab45add50fc0dbc036c03f289f95" => :mountain_lion
+    cellar :any_skip_relocation
+    sha256 "1c993e96624036b7885b0ad0416aac54d176555daf45c7387039eb58db5ca8b7" => :el_capitan
+    sha256 "33f8b3e4486e41871e901002091297b83e8a737137f70f13b7bcd7cc51d22229" => :yosemite
+    sha256 "5c23c6f246e3c33431e6ebf45c2d13d69e275b63a5740faa1519bb038e3b45d0" => :mavericks
   end
 
   depends_on "intltool" => :build
