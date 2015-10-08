@@ -24,9 +24,9 @@ class Freerdp < Formula
   end
 
   bottle do
-    sha1 "361ae059c21eaccfa551b7f4924b2762a6d8d6b1" => :mavericks
-    sha1 "8a82974856fa6346e7ff43b7abb6b12dc5e06634" => :mountain_lion
-    sha1 "49bc6add9fec028879985d288252287ed00c8434" => :lion
+    sha256 "a9dcd06b038eec6a842f736b4d094cd2dc397bb43db94d815da4920418c31d5f" => :el_capitan
+    sha256 "6ccbfe9611778eb735dcdc425fb50272fdcd97f637d43376a45a348786bd12ba" => :yosemite
+    sha256 "31bba49df55d694d026ec8735f8e12ce83fb549fc70383bc2a4d3f60f13841fe" => :mavericks
   end
 
   head do
