@@ -1,5 +1,6 @@
 class Freerdp < Formula
   homepage "http://www.freerdp.com/"
+  revision 1
 
   stable do
     url "https://github.com/FreeRDP/FreeRDP/archive/1.0.2.tar.gz"
@@ -34,6 +35,7 @@ class Freerdp < Formula
   end
 
   depends_on :x11
+  depends_on "openssl"
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
