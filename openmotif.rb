@@ -19,6 +19,12 @@ class Openmotif < Formula
   depends_on "libpng" => :optional
   depends_on :x11
 
+  option :universal
+
+  if build.universal?
+    depends_on "flex" => [:build, :universal]
+  end
+
   conflicts_with "lesstif",
     :because => "Lesstif and Openmotif are complete replacements for each other"
 
@@ -29,6 +35,8 @@ class Openmotif < Formula
   patch :DATA
 
   def install
+    ENV.universal_binary if build.universal?
+
     inreplace "autogen.sh", "libtoolize", "glibtoolize"
 
     # https://trac.macports.org/browser/trunk/dports/x11/openmotif/Portfile#L59
