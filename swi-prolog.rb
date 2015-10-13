@@ -1,7 +1,7 @@
 class SwiProlog < Formula
   homepage "http://www.swi-prolog.org/"
-  url "http://www.swi-prolog.org/download/stable/src/swipl-7.2.2.tar.gz"
-  sha256 "c137bbe1d652a6aaa003278045e592637cd9fd5f1d52b05f9f0751bfd9449c8d"
+  url "http://www.swi-prolog.org/download/stable/src/swipl-7.2.3.tar.gz"
+  sha256 "43657d51b7c5887bc2d2bced50a9822b86a08a6841399b8e76ee877f51d646b5"
 
   bottle do
     sha256 "e185ea9d2d2a9f4c8eedb306cacfa9a823a0ea2065c611dcbcb1e1e1c0788848" => :yosemite
@@ -10,8 +10,8 @@ class SwiProlog < Formula
   end
 
   devel do
-    url "http://www.swi-prolog.org/download/devel/src/swipl-7.3.5.tar.gz"
-    sha256 "e8dd7cf6077dabc6cbefe2087fec36f5219d84ac15c9b8ee89db4dcc17edd91f"
+    url "http://www.swi-prolog.org/download/devel/src/swipl-7.3.9.tar.gz"
+    sha256 "0a0b6933bd37cf23446d77839651e0cbbb9d4becd74d9d47fc9d1f26fe409d04"
   end
 
   head do
@@ -83,6 +83,10 @@ class SwiProlog < Formula
   end
 
   test do
-    system "#{bin}/swipl", "--version"
+    (testpath/"test.pl").write <<-EOS.undent
+      test :-
+          write('Homebrew').
+    EOS
+    assert_equal "Homebrew", shell_output("#{bin}/swipl -s #{testpath}/test.pl -g test -t halt")
   end
 end
