@@ -1,7 +1,7 @@
 class X3270 < Formula
   homepage "http://x3270.bgp.nu/"
-  url "https://downloads.sourceforge.net/project/x3270/x3270/3.3.15ga8/suite3270-3.3.15ga8-src.tgz"
-  sha256 "85a29af6ba6cf77dc0d0dc47bf31bcaec35aff57c529924b632b3c5332a555ce"
+  url "https://downloads.sourceforge.net/project/x3270/x3270/3.4ga8/suite3270-3.4ga8-src.tgz"
+  sha256 "06be4d79ffc24f4465b167b08c6ec48b595f689f3c5177ce5902fb31560b5dfd"
 
   bottle do
     sha1 "bc56bef330ed5179723cb3cda669492b89b8a705" => :yosemite
@@ -17,20 +17,20 @@ class X3270 < Formula
   option "with-tcl3270", "Include tcl3270 (integrated with Tcl)"
   option "with-pr3287", "Include pr3287 (printer emulation)"
 
-  def make_directory(directory)
-    cd directory do
-      system "./configure", "--prefix=#{prefix}"
-      system "make"
-      system "make", "install"
-      system "make install.man"
-    end
+  def install
+    args = ["--prefix=#{prefix}"]
+    args << "--enable-x3270"
+    args << "--enable-c3270" if build.with? "c3270"
+    args << "--enable-s3270" if build.with? "s3270"
+    args << "--enable-tcl3270" if build.with? "tcl3270"
+    args << "--enable-pr3287" if build.with? "pr3287"
+
+    system "./configure", *args
+    system "make", "install"
+    system "make", "install.man"
   end
 
-  def install
-    make_directory "x3270-3.3"
-    make_directory "c3270-3.3" if build.with? "c3270"
-    make_directory "pr3287-3.3" if build.with? "pr3287"
-    make_directory "s3270-3.3" if build.with? "s3270"
-    make_directory "tcl3270-3.3" if build.with? "tcl3270"
+  test do
+    system bin/"x3270", "--version"
   end
 end
