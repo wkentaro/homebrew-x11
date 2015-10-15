@@ -4,9 +4,9 @@ class X3270 < Formula
   sha256 "06be4d79ffc24f4465b167b08c6ec48b595f689f3c5177ce5902fb31560b5dfd"
 
   bottle do
-    sha1 "bc56bef330ed5179723cb3cda669492b89b8a705" => :yosemite
-    sha1 "1e317cde1f0bf755057b6189972f57b8432ccce6" => :mavericks
-    sha1 "f31aa130ccc0bd377309fdc1b91c4fa8a5004ba4" => :mountain_lion
+    sha256 "5263d9ff0056e64d37d7a47503a6806265a59196800d231ae51c5d6c5a268b78" => :el_capitan
+    sha256 "68970da1b71f3355b11e541c401501c51483abcddcd3e288ddfd2143958e5225" => :yosemite
+    sha256 "8d3305ecc979f02af1795310f979358b695ac9462b6aa1aa2f9fb7aedb574992" => :mavericks
   end
 
   depends_on :x11
