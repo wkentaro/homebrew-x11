@@ -5,6 +5,13 @@ class Euslisp < Formula
   sha256 "74cf37606bd9fcb38ddcd6dcfbbb0989375faa9c18ada3dff6e39d610d966ea9"
   head "https://github.com/euslisp/EusLisp.git"
 
+  bottle do
+    cellar :any
+    sha256 "d2845cb15b3ebe56a81177b3bd01a8f29fa5a4e7694fa2030ae7c97df24aa331" => :el_capitan
+    sha256 "be84cea05d002bbea94cc676fb741e6eda7f0df1638bc061066f8059d3679a26" => :yosemite
+    sha256 "a69ac245ae76d79c5d9787d6384f85ebc2127ce6a6bbe8c844dda6f38f2d2805" => :mavericks
+  end
+
   depends_on :x11
 
   def install
