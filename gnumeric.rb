@@ -1,8 +1,8 @@
 class Gnumeric < Formula
   desc "GNOME Spreadsheet Application"
   homepage "https://projects.gnome.org/gnumeric/"
-  url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.23.tar.xz"
-  sha256 "00474cbf1e70f62062974d0beb5f65ebc45d1047bc8fd0a1133e3d9725e19551"
+  url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.24.tar.xz"
+  sha256 "c59d5271b27366008bccb4d53ad8333da36d837003a018892f2da325c1449551"
 
   bottle do
     sha256 "113d9cb86597b49ac68ee5701fff6b01abc33ebd794767863fb53d9693e29a84" => :yosemite
@@ -23,6 +23,8 @@ class Gnumeric < Formula
   deprecated_option "python-scripting" => "with-python-scripting"
 
   def install
+    # ensures that the files remain within the keg
+    inreplace "component/Makefile.in", "GOFFICE_PLUGINS_DIR = @GOFFICE_PLUGINS_DIR@", "GOFFICE_PLUGINS_DIR = @libdir@/goffice/@GOFFICE_API_VER@/plugins/gnumeric"
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--disable-schemas-compile"
