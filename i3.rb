@@ -27,9 +27,12 @@ class I3 < Formula
     # In src/i3.mk, precompiled headers are used if CC=clang, however superenv
     # currently breaks the clang invocation, setting CC=cc works around this.
     system "make", "install", "CC=cc", "PREFIX=#{prefix}"
+    man1.install Dir["man/*.1"]
   end
 
   test do
-    system "#{bin}/i3", "-v"
+    result = shell_output("#{bin}/i3 -v")
+    result.force_encoding("UTF-8") if result.respond_to?(:force_encoding)
+    assert_match /#{version}/, result
   end
 end
