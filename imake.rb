@@ -15,7 +15,7 @@ class Imake < Formula
   depends_on :x11
 
   patch :p0 do
-    url "https://trac.macports.org/browser/trunk/dports/x11/imake/files/patch-imakemdep.h.diff?rev=127961&format=txt"
+    url "https://raw.githubusercontent.com/Homebrew/patches/a0bb3a4/imake/patch-imakemdep.h.diff"
     sha256 "1f7a24f625d2611c31540d4304a45f228767becafa37af01e1695d74e612459e"
   end
 
