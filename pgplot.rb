@@ -27,12 +27,12 @@ class Pgplot < Formula
 
   # from MacPorts: https://trac.macports.org/browser/trunk/dports/graphics/pgplot/files
   patch :p0 do
-    url "https://trac.macports.org/export/89961/trunk/dports/graphics/pgplot/files/patch-makemake.diff"
+    url "https://raw.githubusercontent.com/Homebrew/patches/b520c2d/pgplot/patch-makemake.diff"
     sha256 "1af44204240dd91a59c899714b4f6012ff1eccfcad8f2133765beec34d6f1423"
   end
 
   patch :p0 do
-    url "https://trac.macports.org/export/89961/trunk/dports/graphics/pgplot/files/patch-proccom.c.diff"
+    url "https://raw.githubusercontent.com/Homebrew/patches/b520c2d/pgplot/patch-proccom.c.diff"
     sha256 "93c55078389c660407c0052569d3ed543c92107c139c765d207b90687cfb7a0c"
   end
 
