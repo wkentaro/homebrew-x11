@@ -13,7 +13,7 @@ class Gle < Formula
   # fix namespace issues causing compilation errors
   # https://trac.macports.org/ticket/41760
   patch :p0 do
-    url "https://trac.macports.org/raw-attachment/ticket/41760/patch-hash-map.diff"
+    url "https://raw.githubusercontent.com/Homebrew/patches/985ba4f/gle/patch-hash-map.diff"
     sha256 "59769465080c539573313411c301314b18aa407e61858ce3b42d9f3b0660b1e4"
   end
 
