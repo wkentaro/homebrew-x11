@@ -6,9 +6,10 @@ class I3 < Formula
   head "https://github.com/i3/i3.git"
 
   bottle do
-    sha256 "f21e0d93c9b0795dd1ea82ce35416234ca2e7a9dada7e8b61651b52292aab7b0" => :el_capitan
-    sha256 "0b108625e7b874d49fd37f87f08203b134f29482f7572cbb6bb5bef176b3b695" => :yosemite
-    sha256 "ead1ac03f314ab8b8105dbd79a5d30dfd24ffceb635600026080371774738e38" => :mavericks
+    revision 1
+    sha256 "30a52f1ca46e476cb97f87db7192e56009edd308dab52b4b6590ccb90a4afd5a" => :el_capitan
+    sha256 "6f97e6ffd04dd9cb92735087cbc1d6e7b1ae621c20be10af29f17b44e99af577" => :yosemite
+    sha256 "8f28ab83eaffec56f5ff46d63ac7c188be4485839bea5ea764bc1c273de756f9" => :mavericks
   end
 
   depends_on "asciidoc" => :build
