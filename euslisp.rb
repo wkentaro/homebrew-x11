@@ -4,6 +4,7 @@ class Euslisp < Formula
   url "https://github.com/euslisp/EusLisp/archive/EusLisp-9.15.tar.gz"
   sha256 "74cf37606bd9fcb38ddcd6dcfbbb0989375faa9c18ada3dff6e39d610d966ea9"
   head "https://github.com/euslisp/EusLisp.git"
+  revision 1
 
   bottle do
     cellar :any
@@ -31,20 +32,23 @@ class Euslisp < Formula
         ln_s "Makefile.Darwin", "Makefile"
         system "make"
 
-        bin.mkpath
-        system "make", "install", "PUBBINDIR=#{bin}"
+        libexec.mkpath
+        system "make", "install", "PUBBINDIR=#{libexec}"
       end
+    end
+
+    bin.mkpath
+    ["eus", "eusx", "euscomp"].each do |exec|
+      (bin/exec).write <<-EOS.undent
+        #!/bin/bash
+        EUSDIR=#{opt_prefix}/eus ARCHDIR=Darwin LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH exec #{libexec}/#{exec} "$@"
+      EOS
     end
   end
 
-  def caveats; <<-EOF.undent
-    Please add below lines to your shell configuration file. (ex. ~/.bashrc or ~/.zshrc)
-    export EUSDIR=#{opt_prefix}/eus
-    EOF
-  end
-
   test do
-    ENV["EUSDIR"] = "#{opt_prefix}/eus"
     system "#{bin}/eus", "(exit)"
+    system "#{bin}/eusx", "(exit)"
+    system "#{bin}/euscomp", "(exit)"
   end
 end
